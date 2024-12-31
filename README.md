@@ -323,3 +323,77 @@ Here’s why the Chi-Square test works:
    - The expected frequency in each cell should generally be at least 5. If not, the Chi-Square approximation may not hold.
 
 In summary, the **Chi-Square Test of Independence** works because it measures how much the observed frequencies deviate from what we would expect if the two variables were independent. By quantifying this deviation and comparing it to a theoretical distribution, it allows us to determine whether the variables are related or independent. The test is grounded in solid mathematical theory, including the concept of expected frequencies and the Chi-Square distribution, making it a robust method for testing relationships between categorical variables.
+
+
+Besides the **Chi-Square Test of Independence**, several other methods can be used to test the independence between two categorical variables. Some of these methods include:
+
+### 1. **Fisher's Exact Test**
+   - **When to Use**: Fisher’s Exact Test is used primarily when the sample size is small or when the expected frequency in some cells of the contingency table is less than 5. 
+   - **How It Works**: Unlike the Chi-Square test, which is based on approximations of large sample sizes, Fisher's Exact Test calculates the exact probability of observing the given data (or something more extreme) assuming the null hypothesis of independence. It uses the hypergeometric distribution to determine the probability of the observed configuration of counts.
+   - **Assumptions**: It’s valid for 2x2 contingency tables and can be extended for larger tables using the Fisher-Freeman-Halton extension.
+
+### 2. **Likelihood Ratio Test (G-test)**
+   - **When to Use**: This is another alternative to the Chi-Square test. It is often used when the Chi-Square test assumptions are violated (e.g., expected frequencies too low).
+   - **How It Works**: The Likelihood Ratio Test compares the likelihood of the data under the null hypothesis of independence to the likelihood of the data under the alternative hypothesis. The test statistic follows a Chi-Square distribution under the null hypothesis.
+   - **Mathematics**: The likelihood ratio statistic is calculated as:
+     \[
+     G^2 = 2 \sum_{i,j} O_{ij} \ln \left(\frac{O_{ij}}{E_{ij}}\right)
+     \]
+     where \( O_{ij} \) and \( E_{ij} \) are the observed and expected frequencies, respectively.
+
+### 3. **Cramér's V Statistic**
+   - **When to Use**: This method is typically used to measure the strength of association between two categorical variables (not necessarily for testing independence). Cramér's V ranges from 0 (no association) to 1 (complete association).
+   - **How It Works**: Cramér's V is based on the Chi-Square statistic but provides a standardized measure of association. It is often used alongside the Chi-Square test to measure the strength of the association when the Chi-Square test suggests that there is a significant association.
+   - **Formula**:
+     \[
+     V = \sqrt{\frac{\chi^2}{n \times (k - 1)}}
+     \]
+     where \( n \) is the total number of observations and \( k \) is the smaller of the number of rows or columns in the contingency table.
+
+### 4. **Theodosiou's Test**
+   - **When to Use**: This test is used in cases where the number of categories is large, and the variables are ordinal. It is an alternative to the Chi-Square test when the variables are ordered.
+   - **How It Works**: Theodosiou's test uses a non-parametric approach for calculating the association between ordered categorical variables.
+
+### 5. **Spearman's Rank Correlation Coefficient**
+   - **When to Use**: This method is used to test for monotonic relationships between two ordinal variables. Unlike Pearson’s correlation (which measures linear relationships), Spearman’s rank correlation measures the strength and direction of the relationship between ranked variables.
+   - **How It Works**: It calculates the correlation between the ranks of the values of the variables, not their raw values.
+   - **Mathematics**: The formula for Spearman’s rank correlation coefficient is:
+     \[
+     \rho = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}
+     \]
+     where \( d_i \) is the difference in ranks for each pair of values, and \( n \) is the number of data points.
+
+### 6. **Mutual Information**
+   - **When to Use**: Mutual Information is a method from information theory that quantifies the amount of information gained about one variable by knowing the other variable. It is particularly useful when the relationship between variables is non-linear.
+   - **How It Works**: It measures the reduction in uncertainty of one variable given knowledge of the other variable. If two variables are independent, their mutual information will be zero.
+   - **Formula**:
+     \[
+     I(X;Y) = \sum_{x \in X} \sum_{y \in Y} P(x, y) \log \frac{P(x, y)}{P(x)P(y)}
+     \]
+     where \( P(x, y) \) is the joint probability distribution of \( X \) and \( Y \), and \( P(x) \) and \( P(y) \) are their marginal distributions.
+
+---
+
+### Can We Use **Bootstrapping** for Testing Independence?
+
+Yes, **bootstrapping** can be used to test the independence of two variables. Bootstrapping is a non-parametric method that involves repeatedly sampling from the data with replacement to create a large number of simulated datasets. For testing independence, bootstrapping can be used as follows:
+
+1. **Resampling**: Generate many resampled datasets by drawing samples with replacement from the observed data.
+   
+2. **Test Statistic**: For each resampled dataset, compute a test statistic (such as the Chi-Square statistic, or a measure like mutual information).
+
+3. **Comparison**: Compare the observed test statistic (calculated from the original data) to the distribution of the test statistic from the resampled datasets. If the observed statistic is significantly different from what is expected under the null hypothesis of independence, this suggests that the variables are not independent.
+
+#### Advantages of Bootstrapping for Independence Testing:
+- **Non-parametric**: Bootstrapping doesn't rely on the assumptions of normality or other parametric constraints, making it useful when the data do not meet the assumptions of traditional tests like Chi-Square or Fisher’s Exact Test.
+- **Flexibility**: It can be applied to a variety of test statistics, including those that are not easily derived under theoretical distributions.
+
+#### Disadvantages:
+- **Computational Intensity**: Bootstrapping requires a large number of resamples to provide accurate p-values, which can be computationally expensive, especially with large datasets.
+- **Assumption of IID**: Bootstrapping assumes that the data points are independent and identically distributed (IID), which may not hold in all scenarios.
+
+---
+
+### Conclusion
+
+In summary, while the **Chi-Square Test of Independence** is one of the most commonly used tests for independence, there are several other methods available, including **Fisher's Exact Test**, **Likelihood Ratio Test (G-test)**, **Cramér's V**, and others, depending on the data type and size. **Bootstrapping** can be a useful, flexible alternative for testing independence, especially in cases where the assumptions of parametric tests do not hold or when the sample size is small.
