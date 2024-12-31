@@ -8,9 +8,6 @@ When we talk about binary classifications and metrics, our model will predict a 
 - TN (N: Predictio of Model, T: did it correctly)
 - FN (N: Prediction of Model, F: did it wrongly)
 
- $$
-\text{Precision} = \frac{\text{True Positives (TP)}}{\text{True Positives (TP)} + \text{False Positives (FP)}}
-$$
 
 ### 1. Precision
 Precision measures the proportion of true positive predictions among all positive predictions (i.e., how many of the predicted positive instances are actually positive).
