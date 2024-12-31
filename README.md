@@ -270,3 +270,56 @@ If we choose a significance level \( \alpha = 0.05 \), we compare the p-value to
 - **p-value = 0.047** is **less than** 0.05.
 
 Since the p-value is less than 0.05, we reject the null hypothesis and conclude that there is a **significant association** between admission status and insurance situation. In other words, the likelihood of being admitted to the hospital **depends on** the type of insurance the patient has.
+
+
+The **Chi-Square Test of Independence** works because it compares the **observed frequencies** in each category of a contingency table to the **expected frequencies** under the assumption that the two categorical variables are independent. The test evaluates whether the difference between observed and expected frequencies is large enough to suggest that the variables are not independent.
+
+Here’s why the Chi-Square test works:
+
+### 1. **The Assumption of Independence**
+   The Chi-Square test is based on the **null hypothesis**, which assumes that there is no relationship (or association) between the two categorical variables. If the two variables are truly independent, the distribution of observations across the cells in the contingency table will align with the expected frequencies calculated based on the marginal totals of the rows and columns.
+
+   - **Independence** means that knowing the value of one variable provides no information about the value of the other. For example, if admission status and insurance type are independent, the probability of a patient being admitted should not depend on whether they have private, public, or no insurance.
+   
+### 2. **Expected Frequencies Calculation**
+   The expected frequency for each cell in the contingency table assumes that the two variables are independent. It is calculated based on the product of the marginal probabilities of the two variables:
+
+   \[
+   E_{ij} = \frac{(Row \, Total \, i) \times (Column \, Total \, j)}{Grand \, Total}
+   \]
+
+   The idea is that if the variables are independent, the observed distribution of data across the table should closely match these expected values. If it doesn’t, that suggests some form of association between the variables.
+
+### 3. **Chi-Square Statistic**
+   The **Chi-Square statistic** measures the difference between the observed frequencies (\( O_{ij} \)) and the expected frequencies (\( E_{ij} \)) for each cell in the contingency table:
+
+   \[
+   \chi^2 = \sum_{i=1}^{m} \sum_{j=1}^{n} \frac{(O_{ij} - E_{ij})^2}{E_{ij}}
+   \]
+
+   - A large \( \chi^2 \) value indicates that the difference between observed and expected frequencies is large, suggesting a possible association between the variables.
+   - A small \( \chi^2 \) value indicates that the observed frequencies are close to the expected frequencies, supporting the idea that the variables are independent.
+
+### 4. **Degrees of Freedom and p-value**
+   The degrees of freedom (\( df \)) in a contingency table are determined by the number of rows and columns (minus 1 for each). This helps define the distribution of the Chi-Square statistic.
+
+   - **Degrees of freedom** are calculated as \( df = (m - 1) \times (n - 1) \), where \( m \) and \( n \) are the number of rows and columns, respectively.
+   
+   After calculating the \( \chi^2 \) statistic, we compare it to a Chi-Square distribution with the appropriate degrees of freedom. This comparison results in a **p-value**, which tells us whether the observed difference is statistically significant.
+
+   - **p-value**: If the p-value is low (typically below 0.05), it suggests that the difference between observed and expected frequencies is large enough to reject the null hypothesis and conclude that there is an association between the two variables.
+   - **High p-value**: If the p-value is large, we fail to reject the null hypothesis, meaning the evidence does not support an association between the variables, and they may be independent.
+
+### 5. **Why the Chi-Square Test Works**
+   - **Central Limit Theorem**: The Chi-Square test works because, under the null hypothesis of independence, the distribution of the test statistic \( \chi^2 \) approximates a **Chi-Square distribution** as the sample size increases. This approximation is due to the **central limit theorem**, which states that with large enough sample sizes, the distribution of the test statistic will converge to a known distribution (Chi-Square in this case), making it possible to calculate a p-value.
+   
+   - **Large Sample Size**: For smaller datasets, the Chi-Square test can be less reliable, especially if the expected frequencies are small (typically less than 5). In such cases, the results might not be as accurate. For small sample sizes, other tests like **Fisher’s Exact Test** may be more appropriate.
+
+### 6. **Assumptions of the Chi-Square Test**
+   For the Chi-Square test to be valid, certain conditions should be met:
+   - The data should be categorical (nominal or ordinal).
+   - The categories should be mutually exclusive.
+   - The observations should be independent.
+   - The expected frequency in each cell should generally be at least 5. If not, the Chi-Square approximation may not hold.
+
+In summary, the **Chi-Square Test of Independence** works because it measures how much the observed frequencies deviate from what we would expect if the two variables were independent. By quantifying this deviation and comparing it to a theoretical distribution, it allows us to determine whether the variables are related or independent. The test is grounded in solid mathematical theory, including the concept of expected frequencies and the Chi-Square distribution, making it a robust method for testing relationships between categorical variables.
