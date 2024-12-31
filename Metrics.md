@@ -62,17 +62,13 @@ The **ROC Curve** (Receiver Operating Characteristic curve) is a graphical plot 
 1. **True Positive Rate (TPR)** or **Recall**:
    - TPR is the proportion of actual positives that are correctly identified by the model.
    - Formula: 
-     $$
-     \text{TPR} = \frac{\text{True Positives (TP)}}{\text{True Positives (TP)} + \text{False Negatives (FN)}}
-     $$
+     $$\text{TPR} = \frac{\text{True Positives (TP)}}{\text{True Positives (TP)} + \text{False Negatives (FN)}}$$
    - Also known as **Sensitivity** or **Recall**.
 
 2. **False Positive Rate (FPR)**:
    - FPR is the proportion of actual negatives that are incorrectly identified as positives by the model.
    - Formula:
-     $$
-     \text{FPR} = \frac{\text{False Positives (FP)}}{\text{False Positives (FP)} + \text{True Negatives (TN)}}
-     $$
+     $$\text{FPR} = \frac{\text{False Positives (FP)}}{\text{False Positives (FP)} + \text{True Negatives (TN)}}$$
    - Also known as **1 - Specificity**.
 
 #### **How ROC Curve Works**
