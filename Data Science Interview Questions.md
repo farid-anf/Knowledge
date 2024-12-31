@@ -1,7 +1,7 @@
 # Statistics: 
 In statistical hypothesis testing, Type I and Type II errors are potential mistakes that can occur when making decisions based on sample data.
 
-# Type I and Type II Error: 
+## Type I and Type II Error: 
 
 ### Type I Error (False Positive)
 - **Definition:** A Type I error occurs when the null hypothesis \( H_0 \) is true, but it is incorrectly rejected.
@@ -23,7 +23,7 @@ In statistical hypothesis testing, Type I and Type II errors are potential mista
 In practical terms, researchers must balance the risks of both errors depending on the situation and the consequences of making incorrect decisions.
 
 
-# Linear regression, coefficinet, p-value, and $R^2$
+## Linear regression, coefficinet, p-value, and $R^2$
 
 ### Linear Regression
 
@@ -142,7 +142,7 @@ Suppose you have the following observed values and predicted values from a linea
 This high \( R^2 \) value indicates that the model explains 99.5% of the variability in the dependent variable, suggesting an excellent fit to the data.
 
 
-# Conditions for Linear regression to be reliable?
+## Conditions for Linear regression to be reliable?
 
  Linear regression relies on several key assumptions to ensure the validity and reliability of the model’s results. Here are the main assumptions:
 
@@ -186,3 +186,89 @@ In multiple linear regression, the independent variables should not be too highl
 - **No Multicollinearity**: Ensures the stability of coefficient estimates and interpretability of the model.
 
 Violations of these assumptions can lead to biased, inefficient, or misleading results, which is why it's crucial to validate these assumptions when performing linear regression analysis.
+
+# Programming 
+
+## Explain how MapReduce works as simply as possible.
+
+MapReduce is a programming model used for processing and generating large datasets with a parallel, distributed algorithm on a cluster. It consists of two main functions: Map and Reduce. Here’s a simplified explanation of how MapReduce works:
+
+### Key Concepts
+
+1. **Map Function**:
+   - **Input**: Takes a set of data.
+   - **Process**: Transforms the input data into intermediate key-value pairs.
+   - **Output**: Produces a list of key-value pairs.
+
+2. **Reduce Function**:
+   - **Input**: Takes the intermediate key-value pairs from the Map function.
+   - **Process**: Aggregates, filters, or processes these pairs to produce a final result.
+   - **Output**: Produces the final output.
+
+### Steps in a MapReduce Workflow
+
+1. **Splitting**:
+   - The input data is split into manageable chunks, typically in the form of lines of a file or blocks of data.
+
+2. **Mapping**:
+   - Each chunk of data is processed by the Map function in parallel.
+   - The Map function reads the input and generates key-value pairs based on a defined logic.
+   - Example: For a word count program, the Map function reads a line of text and outputs key-value pairs where the key is a word and the value is 1 (e.g., ("word", 1)).
+
+3. **Shuffling and Sorting**:
+   - The intermediate key-value pairs produced by the Map function are shuffled and sorted by the key.
+   - This ensures that all values associated with the same key are grouped together.
+   - Example: All pairs like ("word", 1) are grouped together for each word.
+
+4. **Reducing**:
+   - The Reduce function processes each group of key-value pairs.
+   - It performs aggregation or summarization based on the defined logic.
+   - Example: The Reduce function sums the values for each key, resulting in a count of occurrences for each word (e.g., ("word", 5)).
+
+5. **Final Output**:
+   - The results from the Reduce function are collected and written to the output.
+   - This output can be stored in a file, database, or any other storage system.
+
+### Example: Word Count
+
+#### 1. Input Data:
+```
+doc1: "Hello world"
+doc2: "Hello MapReduce"
+```
+
+#### 2. Map Function:
+- For `doc1`:
+  - ("Hello", 1)
+  - ("world", 1)
+- For `doc2`:
+  - ("Hello", 1)
+  - ("MapReduce", 1)
+
+#### 3. Shuffle and Sort:
+- ("Hello", [1, 1])
+- ("world", [1])
+- ("MapReduce", [1])
+
+#### 4. Reduce Function:
+- For "Hello":
+  - Sum values [1, 1] to get ("Hello", 2)
+- For "world":
+  - Sum values [1] to get ("world", 1)
+- For "MapReduce":
+  - Sum values [1] to get ("MapReduce", 1)
+
+#### 5. Final Output:
+```
+("Hello", 2)
+("world", 1)
+("MapReduce", 1)
+```
+
+### Summary
+
+- **Map**: Transforms input data into key-value pairs.
+- **Shuffle and Sort**: Groups intermediate key-value pairs by key.
+- **Reduce**: Aggregates or processes grouped key-value pairs to produce final results.
+
+MapReduce allows for scalable and efficient data processing by distributing the work across multiple nodes in a cluster, making it suitable for handling large-scale data processing tasks.
