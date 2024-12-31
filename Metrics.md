@@ -24,9 +24,9 @@ $$
 ### 2. Recall
 Recall (also known as sensitivity or true positive rate) measures the proportion of true positive predictions among all actual positive instances (i.e., how many of the actual positive instances are correctly predicted).
 
-\[
+$$
 \text{Recall} = \frac{\text{True Positives (TP)}}{\text{True Positives (TP)} + \text{False Negatives (FN)}}
-\]
+$$
 
 - **Best Use Case**: Recall is critical when the cost of false negatives is high. For example, in medical diagnostics, failing to detect a disease (false negative) can be far more serious than a false positive.
 
