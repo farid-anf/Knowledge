@@ -5,9 +5,9 @@ Understanding various evaluation metrics is crucial for selecting the right metr
 ### 1. Precision
 Precision measures the proportion of true positive predictions among all positive predictions (i.e., how many of the predicted positive instances are actually positive).
 
-\[
+$$
 \text{Precision} = \frac{\text{True Positives (TP)}}{\text{True Positives (TP)} + \text{False Positives (FP)}}
-\]
+$$
 
 - **Best Use Case**: Precision is particularly important in situations where the cost of false positives is high. For example, in spam detection, you want to minimize the chances of marking a legitimate email as spam.
 
