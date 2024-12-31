@@ -8,8 +8,6 @@ When we talk about binary classifications and metrics, our model will predict a 
 - TN (Predict Negative correctly)
 - FN (Predict Negative wrongly)
 
-Now we have different metrics that each look at one of them in terms of importance.
-- For example, when it is costly that some thing is Positive but the model predict it as Negative (like a real email counted as spam), that is FN. So to make it costly, we look at the factors that if 
  $$
 \text{Precision} = \frac{\text{True Positives (TP)}}{\text{True Positives (TP)} + \text{False Positives (FP)}}
 $$
