@@ -92,3 +92,181 @@ The calculated Chi-square statistic is compared against a **Chi-square distribut
 6. **Interpret the results**: If the p-value is less than the significance level, reject the null hypothesis and conclude that the variables are dependent.
 
 In the case of your example with **admission** and **insurance situation**, this test helps you determine whether the likelihood of being admitted to the hospital is associated with the type of insurance a patient has.
+
+
+
+
+
+Let’s go through a full example of the **Chi-Square Test of Independence** using mathematical steps with some data, but without Python code.
+
+### Example: Testing the Independence between Admission Status and Insurance Situation
+
+Suppose you are analyzing data from a hospital, and you want to test if there's an association between two categorical variables:
+1. **Admission status** (whether a patient is admitted to the hospital or not)
+2. **Insurance situation** (whether a patient has private insurance, public insurance, or no insurance)
+
+Here’s a small dataset that shows the observed frequencies of patients' admission status and their insurance situation:
+
+| Insurance Status  | Admitted (Yes) | Not Admitted (No) | Total |
+|-------------------|----------------|-------------------|-------|
+| Private Insurance | 30             | 20                | 50    |
+| Public Insurance  | 40             | 30                | 70    |
+| No Insurance      | 10             | 20                | 30    |
+| **Total**         | **80**         | **70**            | **150** |
+
+### Step 1: Construct the Contingency Table
+
+The contingency table is already provided, where the rows represent the different insurance statuses, and the columns represent whether the patient was admitted or not.
+
+\[
+\begin{array}{|c|c|c|c|}
+\hline
+\text{Insurance Status} & \text{Admitted (Yes)} & \text{Not Admitted (No)} & \text{Total} \\
+\hline
+\text{Private Insurance} & 30 & 20 & 50 \\
+\text{Public Insurance} & 40 & 30 & 70 \\
+\text{No Insurance} & 10 & 20 & 30 \\
+\hline
+\text{Total} & 80 & 70 & 150 \\
+\hline
+\end{array}
+\]
+
+### Step 2: Calculate the Expected Frequencies
+
+Now we calculate the expected frequencies for each cell, assuming that the two variables (admission and insurance status) are **independent**.
+
+The formula for the expected frequency in any cell \( E_{ij} \) is:
+
+\[
+E_{ij} = \frac{R_i \times C_j}{N}
+\]
+
+Where:
+- \( R_i \) is the total of row \( i \) (total number of patients in each insurance category),
+- \( C_j \) is the total of column \( j \) (total number of admitted vs not admitted),
+- \( N \) is the grand total of all observations (total number of patients).
+
+#### Calculate the expected frequency for "Private Insurance" and "Admitted (Yes)":
+
+\[
+E_{11} = \frac{50 \times 80}{150} = 26.67
+\]
+
+#### Calculate the expected frequency for "Private Insurance" and "Not Admitted (No)":
+
+\[
+E_{12} = \frac{50 \times 70}{150} = 23.33
+\]
+
+#### Calculate the expected frequency for "Public Insurance" and "Admitted (Yes)":
+
+\[
+E_{21} = \frac{70 \times 80}{150} = 37.33
+\]
+
+#### Calculate the expected frequency for "Public Insurance" and "Not Admitted (No)":
+
+\[
+E_{22} = \frac{70 \times 70}{150} = 32.67
+\]
+
+#### Calculate the expected frequency for "No Insurance" and "Admitted (Yes)":
+
+\[
+E_{31} = \frac{30 \times 80}{150} = 16
+\]
+
+#### Calculate the expected frequency for "No Insurance" and "Not Admitted (No)":
+
+\[
+E_{32} = \frac{30 \times 70}{150} = 14
+\]
+
+### Step 3: Chi-Square Statistic Calculation
+
+Now we can calculate the **Chi-Square statistic** \( \chi^2 \). The formula is:
+
+\[
+\chi^2 = \sum_{i=1}^{m} \sum_{j=1}^{n} \frac{(O_{ij} - E_{ij})^2}{E_{ij}}
+\]
+
+Where:
+- \( O_{ij} \) is the observed frequency in cell \( (i,j) \),
+- \( E_{ij} \) is the expected frequency in cell \( (i,j) \).
+
+We will now calculate the sum for each cell.
+
+#### For "Private Insurance" and "Admitted (Yes)":
+
+\[
+\frac{(30 - 26.67)^2}{26.67} = \frac{(3.33)^2}{26.67} = \frac{11.09}{26.67} = 0.416
+\]
+
+#### For "Private Insurance" and "Not Admitted (No)":
+
+\[
+\frac{(20 - 23.33)^2}{23.33} = \frac{(-3.33)^2}{23.33} = \frac{11.09}{23.33} = 0.475
+\]
+
+#### For "Public Insurance" and "Admitted (Yes)":
+
+\[
+\frac{(40 - 37.33)^2}{37.33} = \frac{(2.67)^2}{37.33} = \frac{7.13}{37.33} = 0.191
+\]
+
+#### For "Public Insurance" and "Not Admitted (No)":
+
+\[
+\frac{(30 - 32.67)^2}{32.67} = \frac{(-2.67)^2}{32.67} = \frac{7.13}{32.67} = 0.218
+\]
+
+#### For "No Insurance" and "Admitted (Yes)":
+
+\[
+\frac{(10 - 16)^2}{16} = \frac{(-6)^2}{16} = \frac{36}{16} = 2.25
+\]
+
+#### For "No Insurance" and "Not Admitted (No)":
+
+\[
+\frac{(20 - 14)^2}{14} = \frac{(6)^2}{14} = \frac{36}{14} = 2.57
+\]
+
+Now sum all the values:
+
+\[
+\chi^2 = 0.416 + 0.475 + 0.191 + 0.218 + 2.25 + 2.57 = 6.12
+\]
+
+### Step 4: Degrees of Freedom (df)
+
+The degrees of freedom (df) for a contingency table are given by:
+
+\[
+df = (m - 1) \times (n - 1)
+\]
+
+Where:
+- \( m \) is the number of rows (3 categories of insurance),
+- \( n \) is the number of columns (2 categories of admission: Yes and No).
+
+Thus, the degrees of freedom are:
+
+\[
+df = (3 - 1) \times (2 - 1) = 2 \times 1 = 2
+\]
+
+### Step 5: Find the p-value
+
+To determine the significance of the test, we compare the calculated \( \chi^2 \) value to a **Chi-Square distribution** with 2 degrees of freedom.
+
+Using a Chi-square distribution table, or a calculator, we find that for \( \chi^2 = 6.12 \) with \( df = 2 \), the p-value is approximately **0.047**.
+
+### Step 6: Conclusion
+
+If we choose a significance level \( \alpha = 0.05 \), we compare the p-value to \( \alpha \):
+
+- **p-value = 0.047** is **less than** 0.05.
+
+Since the p-value is less than 0.05, we reject the null hypothesis and conclude that there is a **significant association** between admission status and insurance situation. In other words, the likelihood of being admitted to the hospital **depends on** the type of insurance the patient has.
