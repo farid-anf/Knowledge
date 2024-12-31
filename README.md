@@ -11,11 +11,11 @@ The first step is to construct a **contingency table** (cross-tabulation) that d
 Suppose we have two categorical variables, \( X \) (e.g., **admission**) and \( Y \) (e.g., **insurance situation**). Let’s define:
 
 - $X_1, X_2, \dots, X_m$ as the categories of variable $X$,
-- \( Y_1, Y_2, \dots, Y_n \) as the categories of variable \( Y \).
+- $Y_1, Y_2, \dots, Y_n$ as the categories of variable $Y$.
 
 The contingency table would have the following structure:
 
-\[
+$$
 \begin{array}{|c|c|c|c|c|}
 \hline
 & Y_1 & Y_2 & \dots & Y_n \\
@@ -26,23 +26,23 @@ X_2 & O_{21} & O_{22} & \dots & O_{2n} \\
 X_m & O_{m1} & O_{m2} & \dots & O_{mn} \\
 \hline
 \end{array}
-\]
+$$
 
-Where \( O_{ij} \) represents the **observed frequency** in the cell corresponding to the combination of \( X_i \) and \( Y_j \).
+Where $O_{ij}$ represents the **observed frequency** in the cell corresponding to the combination of $X_i$ and $Y_j$.
 
 ### 2. **Expected Frequencies**
 
-If the two variables \( X \) and \( Y \) are **independent**, the observed frequencies should follow a certain expected distribution. The expected frequency \( E_{ij} \) for each cell of the contingency table is calculated under the assumption that the variables are independent. The expected frequency is given by:
+If the two variables $X$ and $Y$ are **independent**, the observed frequencies should follow a certain expected distribution. The expected frequency $E_{ij}$ for each cell of the contingency table is calculated under the assumption that the variables are independent. The expected frequency is given by:
 
-\[
+$$
 E_{ij} = \frac{( \text{Row total for } X_i ) \times ( \text{Column total for } Y_j )}{\text{Grand total of all observations}}
-\]
+$$
 
 Mathematically:
 
-\[
+$$
 E_{ij} = \frac{R_i \cdot C_j}{N}
-\]
+$$
 
 Where:
 - \( R_i \) is the total of the \( i \)-th row (the total count of occurrences for category \( X_i \)),
