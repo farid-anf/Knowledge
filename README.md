@@ -10,7 +10,7 @@ The first step is to construct a **contingency table** (cross-tabulation) that d
 
 Suppose we have two categorical variables, \( X \) (e.g., **admission**) and \( Y \) (e.g., **insurance situation**). Let’s define:
 
-- \( X_1, X_2, \dots, X_m \) as the categories of variable \( X \),
+- $ X_1, X_2, \dots, X_m $ as the categories of variable $X$,
 - \( Y_1, Y_2, \dots, Y_n \) as the categories of variable \( Y \).
 
 The contingency table would have the following structure:
