@@ -33,9 +33,9 @@ $$
 ### 3. Accuracy
 Accuracy measures the proportion of all correct predictions (both true positives and true negatives) among the total number of predictions.
 
-\[
+$$
 \text{Accuracy} = \frac{\text{True Positives (TP)} + \text{True Negatives (TN)}}{\text{Total Predictions}}
-\]
+$$
 
 - **Best Use Case**: Accuracy is a good metric when the classes are balanced (i.e., there are roughly equal numbers of positive and negative instances). However, it can be misleading in cases of imbalanced datasets.
 
