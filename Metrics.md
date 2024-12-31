@@ -2,6 +2,18 @@
 
 Understanding various evaluation metrics is crucial for selecting the right metric based on the specific context of a machine learning problem, especially for classification tasks. Here’s a detailed explanation of each metric and guidance on when to use them:
 
+When we talk about binary classifications and metrics, our model will predict a Positive or Negative case, however, it is important this prediction is True or False, so in general we have four cases, 
+- TP (Predict Positive correctly)
+- FP (Predict Positive worngly)
+- TN (Predict Negative correctly)
+- FN (Predict Negative wrongly)
+
+Now we have different metrics that each look at one of them in terms of importance.
+- For example, when it is costly that some thing is Positive but the model predict it as Negative (like a real email counted as spam), that is FN. So to make it costly, we look at the factors that if 
+ $$
+\text{Precision} = \frac{\text{True Positives (TP)}}{\text{True Positives (TP)} + \text{False Positives (FP)}}
+$$
+
 ### 1. Precision
 Precision measures the proportion of true positive predictions among all positive predictions (i.e., how many of the predicted positive instances are actually positive).
 
