@@ -39,18 +39,18 @@ $$
 ### 4. F1-Score
 The F1-score is the harmonic mean of precision and recall. It balances the two metrics and provides a single score to evaluate the model’s performance.
 
-\[
+$$
 \text{F1-Score} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
-\]
+$$
 
 - **Best Use Case**: The F1-score is useful when you need to balance precision and recall and when you have an imbalanced dataset. It provides a single measure of performance that accounts for both false positives and false negatives.
 
 ### 5. AUC-ROC (Area Under the Receiver Operating Characteristic Curve)
 The ROC curve plots the true positive rate (recall) against the false positive rate (1 - specificity) at various threshold settings. The AUC-ROC is the area under this curve, providing a single value to summarize the overall performance of the classifier.
 
-\[
+$$
 \text{AUC-ROC} = \text{Area under the ROC curve}
-\]
+$$
 
 ### **AUC-ROC (Area Under the Receiver Operating Characteristic Curve)**
 
@@ -62,17 +62,17 @@ The **ROC Curve** (Receiver Operating Characteristic curve) is a graphical plot 
 1. **True Positive Rate (TPR)** or **Recall**:
    - TPR is the proportion of actual positives that are correctly identified by the model.
    - Formula: 
-     \[
+     $$
      \text{TPR} = \frac{\text{True Positives (TP)}}{\text{True Positives (TP)} + \text{False Negatives (FN)}}
-     \]
+     $$
    - Also known as **Sensitivity** or **Recall**.
 
 2. **False Positive Rate (FPR)**:
    - FPR is the proportion of actual negatives that are incorrectly identified as positives by the model.
    - Formula:
-     \[
+     $$
      \text{FPR} = \frac{\text{False Positives (FP)}}{\text{False Positives (FP)} + \text{True Negatives (TN)}}
-     \]
+     $$
    - Also known as **1 - Specificity**.
 
 #### **How ROC Curve Works**
