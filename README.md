@@ -397,3 +397,116 @@ Yes, **bootstrapping** can be used to test the independence of two variables. Bo
 ### Conclusion
 
 In summary, while the **Chi-Square Test of Independence** is one of the most commonly used tests for independence, there are several other methods available, including **Fisher's Exact Test**, **Likelihood Ratio Test (G-test)**, **Cramér's V**, and others, depending on the data type and size. **Bootstrapping** can be a useful, flexible alternative for testing independence, especially in cases where the assumptions of parametric tests do not hold or when the sample size is small.
+
+
+Let's go through an example of testing the independence of two categorical variables using **bootstrapping**. We will simulate a small dataset with two categorical variables and then use bootstrapping to test their independence.
+
+### Example
+
+Suppose we have a dataset where we want to test the independence between **admission type** (whether a patient was admitted through the emergency department or not) and **insurance status** (whether the patient has insurance or not). Let's use a contingency table for this purpose.
+
+#### Step 1: Simulated Data
+
+Let’s assume the following data (simplified):
+
+| Admission Type | Insurance Status: Insured | Insurance Status: Not Insured |
+|----------------|----------------------------|-------------------------------|
+| Emergency      | 40                         | 20                            |
+| Non-Emergency  | 30                         | 10                            |
+
+From this, we create a contingency table as:
+
+\[
+\text{Observed Contingency Table:}
+\begin{array}{|c|c|c|}
+\hline
+\text{Admission Type} & \text{Insured} & \text{Not Insured} \\
+\hline
+\text{Emergency} & 40 & 20 \\
+\hline
+\text{Non-Emergency} & 30 & 10 \\
+\hline
+\end{array}
+\]
+
+#### Step 2: Calculating the Chi-Square Statistic (Observed)
+
+The Chi-Square statistic for testing independence is given by:
+
+\[
+\chi^2 = \sum \frac{(O_{ij} - E_{ij})^2}{E_{ij}}
+\]
+
+Where:
+- \(O_{ij}\) is the observed frequency in cell \((i, j)\),
+- \(E_{ij}\) is the expected frequency in cell \((i, j)\), which is calculated as:
+  
+\[
+E_{ij} = \frac{\text{row total} \times \text{column total}}{\text{grand total}}
+\]
+
+First, calculate the expected values for each cell in the table:
+
+\[
+E_{\text{Emergency, Insured}} = \frac{(40 + 30) \times (40 + 20)}{(40 + 20 + 30 + 10)} = \frac{70 \times 60}{100} = 42
+\]
+\[
+E_{\text{Emergency, Not Insured}} = \frac{(40 + 30) \times (20 + 10)}{100} = \frac{70 \times 30}{100} = 21
+\]
+\[
+E_{\text{Non-Emergency, Insured}} = \frac{(40 + 30) \times (40 + 20)}{100} = \frac{70 \times 60}{100} = 42
+\]
+\[
+E_{\text{Non-Emergency, Not Insured}} = \frac{(40 + 30) \times (20 + 10)}{100} = \frac{70 \times 30}{100} = 21
+\]
+
+Now, compute the Chi-Square statistic:
+
+\[
+\chi^2 = \frac{(40 - 42)^2}{42} + \frac{(20 - 21)^2}{21} + \frac{(30 - 42)^2}{42} + \frac{(10 - 21)^2}{21}
+\]
+
+\[
+\chi^2 = \frac{4}{42} + \frac{1}{21} + \frac{144}{42} + \frac{121}{21}
+\]
+
+\[
+\chi^2 = 0.0952 + 0.0476 + 3.4286 + 5.76 = 9.3314
+\]
+
+#### Step 3: Bootstrap Resampling
+
+To use bootstrapping, we will create new datasets by sampling with replacement from the original dataset and then compute the Chi-Square statistic for each resampled dataset.
+
+1. **Resample the data with replacement**:
+   - This means randomly selecting observations with replacement (i.e., a patient could appear more than once in the resampled dataset).
+
+2. **Calculate the Chi-Square statistic for each resampled dataset**:
+   - For each resampled dataset, construct the contingency table and calculate the Chi-Square statistic.
+
+3. **Repeat the resampling process** a large number of times (e.g., 1000 iterations).
+
+4. **Compare the observed Chi-Square statistic** to the distribution of Chi-Square statistics from the resampled datasets.
+
+#### Step 4: Bootstrap Implementation (Conceptually)
+
+- Let's say we resample the dataset 1000 times, and for each resample, we calculate a Chi-Square statistic.
+
+- Suppose the bootstrapped Chi-Square statistics for 1000 resamples are stored in a list. We can compute the p-value by finding the proportion of resampled statistics that are greater than or equal to the observed statistic.
+
+\[
+p\text{-value} = \frac{\text{Number of bootstrapped statistics} \geq \chi^2_{\text{observed}}}{\text{Total number of bootstraps}}
+\]
+
+If the p-value is below a significance level (say, 0.05), we reject the null hypothesis and conclude that the two variables (Admission Type and Insurance Status) are not independent.
+
+#### Step 5: Interpretation of Results
+
+- If the p-value obtained from the bootstrap resampling is low (e.g., \( p < 0.05 \)), this suggests that the observed relationship between **Admission Type** and **Insurance Status** is unlikely to be due to random chance, indicating that the two variables are **dependent**.
+- If the p-value is high (e.g., \( p \geq 0.05 \)), it suggests that the observed relationship could be due to random chance, and thus the two variables are **independent**.
+
+---
+
+### Conclusion
+
+In this example, we used bootstrapping to assess the independence between two categorical variables by generating new samples and comparing the Chi-Square statistic to a distribution of bootstrapped statistics. This allows us to assess the significance of the observed independence test without relying on large-sample approximations, which can be especially useful in small datasets.
