@@ -70,9 +70,9 @@ These components are crucial in assessing the performance, reliability, and usef
 
 ### The mathematics behind it 
 
-Certainly! The R-squared value (\( R^2 \)) is a measure used in statistical modeling to determine the proportion of variance in the dependent variable that can be explained by the independent variables in the model. Here’s the mathematical breakdown of how \( R^2 \) is calculated:
+The R-squared value ($R^2$) is a measure used in statistical modeling to determine the proportion of variance in the dependent variable that can be explained by the independent variables in the model. Here’s the mathematical breakdown of how $R^2$ is calculated:
 
-### Mathematical Definition of \( R^2 \)
+### Mathematical Definition of $R^2$
 
 $$R^2 = 1 - \frac{SS_{\text{res}}}{SS_{\text{tot}}}$$
 
@@ -87,57 +87,57 @@ where:
    where:
    - $y_i$ are the observed values of the dependent variable.
    - $\bar{y}$ is the mean of the observed values.
-   - \( n \) is the number of observations.
+   - $n$ is the number of observations.
 
-   \( SS_{\text{tot}} \) measures the total variation in the dependent variable.
+   $SS_{\text{tot}}$ measures the total variation in the dependent variable.
 
-2. **Calculate the Residual Sum of Squares (\( SS_{\text{res}} \))**:
-   \[ SS_{\text{res}} = \sum_{i=1}^n (y_i - \hat{y}_i)^2 \]
+2. **Calculate the Residual Sum of Squares ($SS_{\text{res}}$)**:
+   $$SS_{\text{res}} = \sum_{i=1}^n (y_i - \hat{y}_i)^2$$
    where:
-   - \( \hat{y}_i \) are the predicted values from the regression model.
+   - $\hat{y}_i$ are the predicted values from the regression model.
 
-   \( SS_{\text{res}} \) measures the variation in the dependent variable that is not explained by the model.
+   $SS_{\text{res}}$ measures the variation in the dependent variable that is not explained by the model.
 
-3. **Calculate the Regression Sum of Squares (\( SS_{\text{reg}} \))** (optional for understanding):
-   \[ SS_{\text{reg}} = \sum_{i=1}^n (\hat{y}_i - \bar{y})^2 \]
+3. **Calculate the Regression Sum of Squares ($SS_{\text{reg}}$)** (optional for understanding):
+   $$SS_{\text{reg}} = \sum_{i=1}^n (\hat{y}_i - \bar{y})^2$$
 
-   \( SS_{\text{reg}} \) measures the variation in the dependent variable that is explained by the model.
+   $SS_{\text{reg}}$ measures the variation in the dependent variable that is explained by the model.
 
-4. **Calculate \( R^2 \)**:
-   \[ R^2 = \frac{SS_{\text{reg}}}{SS_{\text{tot}}} \]
+4. **Calculate $R^2$**:
+   $$R^2 = \frac{SS_{\text{reg}}}{SS_{\text{tot}}}$$
 
    Alternatively, using the relationship between the sums of squares:
-   \[ R^2 = 1 - \frac{SS_{\text{res}}}{SS_{\text{tot}}} \]
+   $$R^2 = 1 - \frac{SS_{\text{res}}}{SS_{\text{tot}}}$$
 
-### Interpretation of \( R^2 \)
+### Interpretation of $R^2$
 
-- **\( R^2 = 0 \)**: Indicates that the model does not explain any of the variability in the dependent variable. The model predictions are no better than the mean of the observed data.
-- **\( R^2 = 1 \)**: Indicates that the model explains all the variability in the dependent variable. The model predictions perfectly fit the observed data.
-- **\( 0 < R^2 < 1 \)**: Indicates the proportion of the variance in the dependent variable that is predictable from the independent variables. For example, \( R^2 = 0.75 \) means that 75% of the variability in the dependent variable can be explained by the model.
+- **$R^2 = 0$**: Indicates that the model does not explain any of the variability in the dependent variable. The model predictions are no better than the mean of the observed data.
+- **$R^2 = 1$**: Indicates that the model explains all the variability in the dependent variable. The model predictions perfectly fit the observed data.
+- **$0 < R^2 < 1$**: Indicates the proportion of the variance in the dependent variable that is predictable from the independent variables. For example, $R^2 = 0.75$ means that 75% of the variability in the dependent variable can be explained by the model.
 
 ### Example Calculation
 
 Suppose you have the following observed values and predicted values from a linear regression model:
 
-- Observed values (\( y \)): [3, 5, 7, 9]
-- Predicted values (\( \hat{y} \)): [2.8, 4.9, 7.1, 9.2]
+- Observed values ($y$): $[3, 5, 7, 9]$
+- Predicted values ($\hat{y}$): $[2.8, 4.9, 7.1, 9.2]$
 
-1. **Calculate the mean of observed values (\( \bar{y} \))**:
-   \[ \bar{y} = \frac{3 + 5 + 7 + 9}{4} = 6 \]
+1. **Calculate the mean of observed values ($\bar{y}$)**:
+   $$\bar{y} = \frac{3 + 5 + 7 + 9}{4} = 6$$
 
-2. **Calculate \( SS_{\text{tot}} \)**:
-   \[ SS_{\text{tot}} = (3 - 6)^2 + (5 - 6)^2 + (7 - 6)^2 + (9 - 6)^2 \]
-   \[ SS_{\text{tot}} = 9 + 1 + 1 + 9 = 20 \]
+2. **Calculate $SS_{\text{tot}}$**:
+   $$SS_{\text{tot}} = (3 - 6)^2 + (5 - 6)^2 + (7 - 6)^2 + (9 - 6)^2$$
+   $$SS_{\text{tot}} = 9 + 1 + 1 + 9 = 20$$
 
 3. **Calculate \( SS_{\text{res}} \)**:
-   \[ SS_{\text{res}} = (3 - 2.8)^2 + (5 - 4.9)^2 + (7 - 7.1)^2 + (9 - 9.2)^2 \]
-   \[ SS_{\text{res}} = 0.04 + 0.01 + 0.01 + 0.04 = 0.10 \]
+   $$SS_{\text{res}} = (3 - 2.8)^2 + (5 - 4.9)^2 + (7 - 7.1)^2 + (9 - 9.2)^2$$
+   $$SS_{\text{res}} = 0.04 + 0.01 + 0.01 + 0.04 = 0.10$$
 
-4. **Calculate \( R^2 \)**:
-   \[ R^2 = 1 - \frac{SS_{\text{res}}}{SS_{\text{tot}}} \]
-   \[ R^2 = 1 - \frac{0.10}{20} \]
-   \[ R^2 = 1 - 0.005 \]
-   \[ R^2 = 0.995 \]
+4. **Calculate $R^2$**:
+   $$R^2 = 1 - \frac{SS_{\text{res}}}{SS_{\text{tot}}}$$
+   $$R^2 = 1 - \frac{0.10}{20}$$
+   $$R^2 = 1 - 0.005$
+   $$R^2 = 0.995$$
 
 This high \( R^2 \) value indicates that the model explains 99.5% of the variability in the dependent variable, suggesting an excellent fit to the data.
 
