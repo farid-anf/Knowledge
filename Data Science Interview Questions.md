@@ -74,19 +74,19 @@ Certainly! The R-squared value (\( R^2 \)) is a measure used in statistical mode
 
 ### Mathematical Definition of \( R^2 \)
 
-\[ R^2 = 1 - \frac{SS_{\text{res}}}{SS_{\text{tot}}} \]
+$$R^2 = 1 - \frac{SS_{\text{res}}}{SS_{\text{tot}}}$$
 
 where:
-- \( SS_{\text{res}} \) is the residual sum of squares.
-- \( SS_{\text{tot}} \) is the total sum of squares.
+- $SS_{\text{res}}$ is the residual sum of squares.
+- $SS_{\text{tot}}$ is the total sum of squares.
 
-### Steps to Calculate \( R^2 \)
+### Steps to Calculate $R^2$
 
-1. **Calculate the Total Sum of Squares (\( SS_{\text{tot}} \))**:
-   \[ SS_{\text{tot}} = \sum_{i=1}^n (y_i - \bar{y})^2 \]
+1. **Calculate the Total Sum of Squares ($SS_{\text{tot}}$)**:
+   $$SS_{\text{tot}} = \sum_{i=1}^n (y_i - \bar{y})^2$$
    where:
-   - \( y_i \) are the observed values of the dependent variable.
-   - \( \bar{y} \) is the mean of the observed values.
+   - $y_i$ are the observed values of the dependent variable.
+   - $\bar{y}$ is the mean of the observed values.
    - \( n \) is the number of observations.
 
    \( SS_{\text{tot}} \) measures the total variation in the dependent variable.
@@ -289,9 +289,9 @@ L1 and L2 regularization are techniques used to prevent overfitting in machine l
 L1 regularization, also known as Lasso (Least Absolute Shrinkage and Selection Operator), adds a penalty equal to the absolute value of the magnitude of coefficients.
 
 - **Penalty Term**: The penalty term added to the loss function is the sum of the absolute values of the coefficients.
-  \[
+  $$
   \text{L1 penalty} = \lambda \sum_{i=1}^{n} |w_i|
-  \]
+  $$
   where \( \lambda \) is the regularization parameter (a hyperparameter that controls the strength of the penalty), and \( w_i \) are the model coefficients.
 
 - **Effect**: L1 regularization can shrink some coefficients to exactly zero, effectively performing feature selection by excluding those features from the model. This makes L1 regularization useful when you have a lot of features and expect only a few to be relevant.
@@ -300,9 +300,9 @@ L1 regularization, also known as Lasso (Least Absolute Shrinkage and Selection O
 L2 regularization, also known as Ridge regression, adds a penalty equal to the square of the magnitude of coefficients.
 
 - **Penalty Term**: The penalty term added to the loss function is the sum of the squared values of the coefficients.
-  \[
+  $$
   \text{L2 penalty} = \lambda \sum_{i=1}^{n} w_i^2
-  \]
+  $$
   where \( \lambda \) is the regularization parameter, and \( w_i \) are the model coefficients.
 
 - **Effect**: L2 regularization tends to shrink coefficients evenly, but not necessarily to zero. It generally retains all features but reduces the magnitude of the coefficients, thereby reducing the complexity of the model and helping to prevent overfitting.
