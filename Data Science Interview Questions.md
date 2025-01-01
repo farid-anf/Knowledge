@@ -40,9 +40,9 @@ where:
 
 ### Terms and Their Significance
 
-#### 1. Coefficient (\(\beta\))
+#### 1. Coefficient ($\beta$)
 
-- **Definition:** The coefficient (\(\beta\)) in linear regression represents the change in the dependent variable (\(y\)) for a one-unit change in the independent variable (\(x\)).
+- **Definition:** The coefficient ($\beta$) in linear regression represents the change in the dependent variable ($y$) for a one-unit change in the independent variable ($x$).
 - **Significance:** It indicates the strength and direction of the relationship between the dependent and independent variables. A positive coefficient means that as the independent variable increases, the dependent variable also increases. A negative coefficient means that as the independent variable increases, the dependent variable decreases.
 
 #### 2. p-Value
@@ -52,13 +52,13 @@ where:
   - **Low p-value (< 0.05):** Suggests strong evidence against the null hypothesis, indicating that the predictor variable is significant.
   - **High p-value (> 0.05):** Suggests weak evidence against the null hypothesis, indicating that the predictor variable is not significant.
 
-#### 3. R-Squared Value (\(R^2\))
+#### 3. R-Squared Value ($R^2$)
 
 - **Definition:** The R-squared value is a statistical measure that represents the proportion of the variance for the dependent variable that's explained by the independent variables in the model.
 - **Significance:** It provides an indication of the goodness of fit of the model.
-  - **\(R^2 = 0\):** Indicates that the model does not explain any of the variability of the response data around its mean.
-  - **\(R^2 = 1\):** Indicates that the model explains all the variability of the response data around its mean.
-  - **Interpreting \(R^2\):** Higher values of \(R^2\) indicate a better fit of the model to the data. However, it is important to note that a high \(R^2\) does not necessarily mean the model is appropriate, as it doesn't account for the complexity of the model or potential overfitting.
+  - **$R^2 = 0$:** Indicates that the model does not explain any of the variability of the response data around its mean.
+  - **$R^2 = 1$:** Indicates that the model explains all the variability of the response data around its mean.
+  - **Interpreting $R^2$:** Higher values of $R^2$ indicate a better fit of the model to the data. However, it is important to note that a high $R^2$ does not necessarily mean the model is appropriate, as it doesn't account for the complexity of the model or potential overfitting.
 
 ### Summary of Significance
 
