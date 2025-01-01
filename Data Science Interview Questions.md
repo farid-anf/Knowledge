@@ -73,6 +73,66 @@ Classify as 1 if y_pred >= 0.5 else 0
 ### Summary
 Building a logistic regression model involves understanding the mathematical foundation, implementing the logistic function, optimizing parameters using gradient descent, and evaluating the model. This process can be implemented in any programming language or even manually with enough computational resources.
 
+Certainly! Maximum Likelihood Estimation (MLE) is a method for estimating the parameters of a statistical model. The goal of MLE is to find the parameter values that maximize the likelihood function, which measures how likely the observed data is given a set of parameters.
+
+### 1. Likelihood Function
+
+For a given dataset \(\mathbf{X} = \{x_1, x_2, \ldots, x_m\}\) and a statistical model with parameters \(\boldsymbol{\theta}\), the likelihood function \(L(\boldsymbol{\theta}; \mathbf{X})\) is defined as the joint probability (or probability density) of the observed data given the parameters:
+
+\[ L(\boldsymbol{\theta}; \mathbf{X}) = P(\mathbf{X} | \boldsymbol{\theta}) \]
+
+In the case of logistic regression, the model predicts probabilities for a binary outcome (0 or 1). Let \(y_i\) denote the observed outcome for the \(i\)-th data point, and \(\sigma(z_i)\) denote the predicted probability of \(y_i = 1\), where \(z_i\) is the linear combination of features:
+
+\[ z_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \ldots + \beta_n x_{in} \]
+\[ \sigma(z_i) = \frac{1}{1 + e^{-z_i}} \]
+
+The likelihood of observing the dataset given the parameters \(\boldsymbol{\beta} = (\beta_0, \beta_1, \ldots, \beta_n)\) is:
+
+\[ L(\boldsymbol{\beta}; \mathbf{X}, \mathbf{y}) = \prod_{i=1}^{m} P(y_i | x_i, \boldsymbol{\beta}) \]
+
+For logistic regression, this becomes:
+
+\[ L(\boldsymbol{\beta}; \mathbf{X}, \mathbf{y}) = \prod_{i=1}^{m} \sigma(z_i)^{y_i} (1 - \sigma(z_i))^{1 - y_i} \]
+
+### 2. Log-Likelihood Function
+
+Because the product of many probabilities can be very small and difficult to work with, we use the log-likelihood function, which is the natural logarithm of the likelihood function. The log-likelihood for logistic regression is:
+
+\[ \ell(\boldsymbol{\beta}; \mathbf{X}, \mathbf{y}) = \log L(\boldsymbol{\beta}; \mathbf{X}, \mathbf{y}) \]
+\[ \ell(\boldsymbol{\beta}; \mathbf{X}, \mathbf{y}) = \sum_{i=1}^{m} \left[ y_i \log(\sigma(z_i)) + (1 - y_i) \log(1 - \sigma(z_i)) \right] \]
+
+### 3. Maximizing the Log-Likelihood
+
+The goal of MLE is to find the parameter values \(\boldsymbol{\beta}\) that maximize the log-likelihood function. This is done by setting the gradient of the log-likelihood function with respect to each parameter to zero and solving for the parameters:
+
+\[ \frac{\partial \ell(\boldsymbol{\beta}; \mathbf{X}, \mathbf{y})}{\partial \beta_j} = 0 \quad \text{for all} \ j \]
+
+In practice, this is often done using iterative optimization algorithms such as gradient ascent (since we are maximizing the function) or more commonly gradient descent on the negative log-likelihood (which is equivalent).
+
+### 4. Gradient of the Log-Likelihood
+
+To use gradient ascent, we need to compute the gradient of the log-likelihood function with respect to the parameters \(\boldsymbol{\beta}\):
+
+\[ \frac{\partial \ell(\boldsymbol{\beta}; \mathbf{X}, \mathbf{y})}{\partial \beta_j} = \sum_{i=1}^{m} \left[ y_i - \sigma(z_i) \right] x_{ij} \]
+
+### 5. Update Rule (Gradient Ascent)
+
+Using gradient ascent, we update the parameters iteratively:
+
+\[ \beta_j := \beta_j + \alpha \sum_{i=1}^{m} \left[ y_i - \sigma(z_i) \right] x_{ij} \]
+
+Where \(\alpha\) is the learning rate, a small positive number that controls the step size.
+
+### Summary
+
+- **Likelihood Function**: Measures the probability of observing the data given the parameters.
+- **Log-Likelihood Function**: Logarithm of the likelihood function, easier to work with due to sums instead of products.
+- **Maximizing Log-Likelihood**: Find parameters that maximize the log-likelihood function, typically using iterative optimization methods like gradient ascent.
+- **Gradient**: Compute the gradient of the log-likelihood with respect to the parameters.
+- **Update Rule**: Iteratively adjust the parameters in the direction that increases the log-likelihood.
+
+By following these steps, MLE finds the parameter values that make the observed data most probable under the logistic regression model.
+
 
 # Statistics: 
 In statistical hypothesis testing, Type I and Type II errors are potential mistakes that can occur when making decisions based on sample data.
