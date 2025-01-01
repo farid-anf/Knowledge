@@ -30,13 +30,13 @@ In practical terms, researchers must balance the risks of both errors depending 
 **Linear regression** is a statistical method used to model the relationship between a dependent variable (also called the response variable or target) and one or more independent variables (also called predictors or features). The goal is to fit a linear equation to observed data.
 
 The general form of a simple linear regression model is:
-\[ y = \beta_0 + \beta_1 x + \epsilon \]
+$$y = \beta_0 + \beta_1 x + \epsilon$$
 where:
-- \( y \) is the dependent variable.
-- \( x \) is the independent variable.
-- \( \beta_0 \) is the intercept of the regression line.
-- \( \beta_1 \) is the slope (coefficient) of the regression line.
-- \( \epsilon \) is the error term (the difference between the observed and predicted values).
+- $y$ is the dependent variable.
+- $x$ is the independent variable.
+- $\beta_0$ is the intercept of the regression line.
+- $\beta_1$ is the slope (coefficient) of the regression line.
+- $\epsilon$ is the error term (the difference between the observed and predicted values).
 
 ### Terms and Their Significance
 
