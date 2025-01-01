@@ -1,3 +1,9 @@
+# Modeling
+
+What are your favorite data visualization techniques? I like matplotlib as well as seaborn. Specially, the statistical plots like heatmap, box plot, scatter plot are my favoriate. 
+
+
+
 # Statistics: 
 In statistical hypothesis testing, Type I and Type II errors are potential mistakes that can occur when making decisions based on sample data.
 
