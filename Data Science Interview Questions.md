@@ -1,7 +1,77 @@
 # Modeling
 
-What are your favorite data visualization techniques? I like matplotlib as well as seaborn. Specially, the statistical plots like heatmap, box plot, scatter plot are my favoriate. 
+## What are your favorite data visualization techniques? 
+I like matplotlib as well as seaborn. Specially, the statistical plots like heatmap, box plot, scatter plot are my favoriate. 
 
+## How would you create a logistic regression model? 
+
+Sure! Building a logistic regression model from scratch involves several steps, including understanding the underlying mathematical principles, collecting and preparing the data, implementing the logistic function, optimizing the model parameters, and evaluating the model's performance. Below, I’ll outline the key steps:
+
+### 1. Understanding Logistic Regression
+Logistic regression is a statistical method for predicting binary outcomes (0 or 1, True or False) based on one or more predictor variables. The model uses a logistic function (sigmoid function) to map predicted values to probabilities.
+
+The logistic function is defined as:
+\[ \sigma(z) = \frac{1}{1 + e^{-z}} \]
+
+Where \( z \) is the linear combination of input features:
+\[ z = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n \]
+
+### 2. Collecting and Preparing the Data
+To build a logistic regression model, you need a dataset with a binary target variable and one or more predictor variables. Ensure the data is clean, handle any missing values, and standardize or normalize the features if necessary.
+
+### 3. Implementing the Logistic Function
+The logistic function maps the linear combination of inputs to a probability. For a given set of parameters (weights and bias), you can calculate the probability of the positive class.
+
+### 4. Optimizing the Model Parameters
+Logistic regression typically uses Maximum Likelihood Estimation (MLE) to estimate the model parameters. This involves finding the parameter values that maximize the likelihood of the observed data.
+
+#### Gradient Descent
+Gradient descent is a common optimization algorithm used to minimize the cost function (negative log-likelihood for logistic regression). The steps are as follows:
+
+1. **Initialize Parameters**: Start with initial guesses for the weights and bias.
+2. **Compute Predictions**: Use the logistic function to compute the predicted probabilities for each data point.
+3. **Calculate the Cost**: Compute the cost function, which measures the difference between the predicted probabilities and the actual labels.
+4. **Update Parameters**: Adjust the weights and bias by computing the gradients and taking a step in the opposite direction of the gradient.
+
+The update rule for each parameter is:
+\[ \beta_j := \beta_j - \alpha \frac{\partial L}{\partial \beta_j} \]
+
+Where \( \alpha \) is the learning rate and \( L \) is the log-likelihood function.
+
+### 5. Evaluating the Model
+After training the model, evaluate its performance using metrics such as accuracy, precision, recall, F1-score, and the ROC-AUC score.
+
+### Example Implementation in Pseudocode
+Here is a simplified pseudocode outline for building a logistic regression model:
+
+```pseudocode
+Initialize weights (beta) and bias (beta_0) randomly
+Set learning rate (alpha) and number of iterations (num_iterations)
+
+for iteration in 1 to num_iterations:
+    Compute linear combination z = beta_0 + sum(beta_j * x_j for j in 1 to n)
+    Compute predictions using the logistic function: y_pred = 1 / (1 + exp(-z))
+    
+    Compute the cost: L = -1/m * sum(y * log(y_pred) + (1 - y) * log(1 - y_pred))
+    
+    Compute gradients:
+    d_beta_0 = 1/m * sum(y_pred - y)
+    d_beta_j = 1/m * sum((y_pred - y) * x_j for j in 1 to n)
+    
+    Update parameters:
+    beta_0 = beta_0 - alpha * d_beta_0
+    beta_j = beta_j - alpha * d_beta_j for j in 1 to n
+
+Return the trained model parameters (beta and beta_0)
+
+# To make predictions:
+z = beta_0 + sum(beta_j * x_j for j in 1 to n)
+y_pred = 1 / (1 + exp(-z))
+Classify as 1 if y_pred >= 0.5 else 0
+```
+
+### Summary
+Building a logistic regression model involves understanding the mathematical foundation, implementing the logistic function, optimizing parameters using gradient descent, and evaluating the model. This process can be implemented in any programming language or even manually with enough computational resources.
 
 
 # Statistics: 
