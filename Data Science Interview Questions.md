@@ -159,6 +159,12 @@ In statistical hypothesis testing, Type I and Type II errors are potential mista
 In practical terms, researchers must balance the risks of both errors depending on the situation and the consequences of making incorrect decisions.
 
 
+ ## Is it better to have too many false positives or too many false negatives? 
+It depends on the needs of the model. If the cost of a
+false positive is huge (an autonomous car kills someone, for
+example) then you should minimize false positives to zero,
+even at the expense of more false negatives.
+
 ## Linear regression, coefficinet, p-value, and $R^2$
 
 ### Linear Regression
