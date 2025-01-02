@@ -275,5 +275,76 @@ print("Sorted array:", sorted_arr)
 
 ---
 
+### Quick Sort
+
+**Quick sort** is an efficient, comparison-based, divide-and-conquer sorting algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot.
+
+#### How Quick Sort Works
+
+1. **Partition**:
+   - Select a pivot element from the array.
+   - Rearrange the array so that all elements with values less than the pivot come before it, and all elements with values greater come after it.
+
+2. **Recursively Sort**:
+   - Recursively apply the above steps to the sub-arrays of elements with smaller and larger values.
+
+#### Example
+
+Let's sort the array `[10, 7, 8, 9, 1, 5]` using quick sort:
+
+**Initial Pass**:
+- Choose a pivot (let's say 5).
+- Partition the array around the pivot → `[1, 5, 8, 9, 10, 7]`.
+
+**Subsequent Passes**:
+- Recursively apply quick sort to the sub-arrays `[1]` and `[8, 9, 10, 7]`.
+- Choose a pivot (let's say 7) for the right sub-array and partition → `[1, 5, 7, 9, 10, 8]`.
+- Recursively apply quick sort to the sub-arrays `[9, 10, 8]`.
+- Choose a pivot (let's say 8) and partition → `[1, 5, 7, 8, 10, 9]`.
+- Recursively apply quick sort to the sub-array `[10, 9]`.
+- Choose a pivot (let's say 9) and partition → `[1, 5, 7, 8, 9, 10]`.
+
+The array is now sorted.
+
+#### Quick Sort Implementation in Python
+
+```python
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[len(arr) // 2]
+        left = [x for x in arr if x < pivot]
+        middle = [x for x in arr if x == pivot]
+        right = [x for x in arr if x > pivot]
+        return quick_sort(left) + middle + quick_sort(right)
+
+# Example usage
+arr = [10, 7, 8, 9, 1, 5]
+sorted_arr = quick_sort(arr)
+print("Sorted array:", sorted_arr)
+```
+
+#### Key Points
+
+- **Time Complexity**: 
+  - Average case: O(n log n)
+  - Worst case: O(n^2) (This happens when the pivot selection is poor, such as when the smallest or largest element is always chosen as the pivot)
+  
+- **Space Complexity**: O(log n) due to the recursion stack in the average case. However, it can be O(n) in the worst case.
+
+- **Stability**: Quick sort is not a stable sorting algorithm. Equal elements may not retain their original relative positions after sorting.
+
+#### Optimizations and Variants
+
+1. **Choosing a Good Pivot**:
+   - Randomly selecting a pivot can help ensure a good average-case performance.
+   - Median-of-three method: choose the median of the first, middle, and last elements as the pivot.
+
+2. **Tail Call Optimization**:
+   - Recur into the smaller sub-array first and use a loop for the larger sub-array to optimize the space complexity.
+
+3. **Insertion Sort for Small Arrays**:
+   - For very small arrays, quick sort's overhead is higher than that of simple algorithms like insertion sort. Hybrid algorithms use quick sort for large arrays and switch to insertion sort for small arrays.
 
 
