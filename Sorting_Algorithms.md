@@ -229,37 +229,38 @@ The array is now sorted.
 #### Merge Sort Implementation in Python
 
 ```python
+# time running n log n
 def merge_sort(arr):
-    if len(arr) > 1:
-        mid = len(arr) // 2
-        left_half = arr[:mid]
-        right_half = arr[mid:]
+    if len(arr) <= 1:
+        return arr
 
-        merge_sort(left_half)
-        merge_sort(right_half)
+    mid = len(arr) // 2
+    left_half = merge_sort(arr[:mid])
+    right_half = merge_sort(arr[mid:])
 
-        i = j = k = 0
+    return merge(left_half, right_half)
 
-        while i < len(left_half) and j < len(right_half):
-            if left_half[i] < right_half[j]:
-                arr[k] = left_half[i]
-                i += 1
-            else:
-                arr[k] = right_half[j]
-                j += 1
-            k += 1
+def merge(left, right):
+    result = []
+    while left and right:
+        if left[0] <= right[0]:
+            result.append(left.pop(0))
+        else:
+            result.append(right.pop(0))
 
-        while i < len(left_half):
-            arr[k] = left_half[i]
-            i += 1
-            k += 1
+    while left:
+        result.append(left.pop(0))
 
-        while j < len(right_half):
-            arr[k] = right_half[j]
-            j += 1
-            k += 1
+    while right:
+        result.append(right.pop(0))
 
-    return arr
+    return result
+
+# Example usage:
+arr = [38, 27, 43, 3, 9, 82, 10]
+sorted_arr = merge_sort(arr)
+print("Sorted array:", sorted_arr)
+
 
 # Example usage
 arr = [38, 27, 43, 3, 9, 82, 10]
