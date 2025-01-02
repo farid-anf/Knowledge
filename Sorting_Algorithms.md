@@ -67,3 +67,212 @@ print("Sorted array:", sorted_arr)
 - **Space Complexity**: O(1) because it is an in-place sorting algorithm.
 - **Stability**: Bubble sort is a stable sorting algorithm since it does not change the relative order of elements with equal keys.
 - **Best Use Case**: Bubble sort is primarily used for educational purposes and is not suitable for large datasets. It might be used for small datasets or nearly sorted data where its performance can be acceptable.
+
+
+### Selection Sort
+
+**Selection sort** is a simple comparison-based sorting algorithm. It works by dividing the input list into two parts: a sorted sublist of items which is built up from left to right and a sublist of the remaining unsorted items.
+
+#### How Selection Sort Works
+
+1. **Initial Pass**:
+   - Find the smallest (or largest, depending on sorting order) element in the unsorted sublist.
+   - Swap this element with the leftmost unsorted element, moving the boundary between the sorted and unsorted sublists.
+
+2. **Subsequent Passes**:
+   - Move the boundary one element to the right.
+   - Repeat the process until the whole list is sorted.
+
+#### Example
+
+Let's sort the array `[64, 25, 12, 22, 11]` using selection sort:
+
+**First Pass**:
+- Find the minimum (11) and swap with the first element → `[11, 25, 12, 22, 64]`
+
+**Second Pass**:
+- Find the minimum (12) and swap with the second element → `[11, 12, 25, 22, 64]`
+
+**Third Pass**:
+- Find the minimum (22) and swap with the third element → `[11, 12, 22, 25, 64]`
+
+**Fourth Pass**:
+- Find the minimum (25) and swap with the fourth element → `[11, 12, 22, 25, 64]`
+
+The array is now sorted.
+
+#### Selection Sort Implementation in Python
+
+```python
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        # Find the minimum element in the remaining unsorted array
+        min_idx = i
+        for j in range(i+1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        # Swap the found minimum element with the first unsorted element
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+
+# Example usage
+arr = [64, 25, 12, 22, 11]
+sorted_arr = selection_sort(arr)
+print("Sorted array:", sorted_arr)
+```
+
+#### Key Points
+- **Time Complexity**: O(n^2) in all cases.
+- **Space Complexity**: O(1) because it is an in-place sorting algorithm.
+- **Stability**: Selection sort is not a stable sorting algorithm.
+
+---
+
+### Insertion Sort
+
+**Insertion sort** is a simple sorting algorithm that builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
+
+#### How Insertion Sort Works
+
+1. **Initial Pass**:
+   - Take the second element and compare it with the first element, swapping if necessary.
+
+2. **Subsequent Passes**:
+   - Take the next element and compare it with the elements in the sorted sublist.
+   - Insert it into the correct position to keep the sublist sorted.
+   - Repeat until the entire list is sorted.
+
+#### Example
+
+Let's sort the array `[12, 11, 13, 5, 6]` using insertion sort:
+
+**First Pass**:
+- Consider the second element (11) and insert it into its correct position → `[11, 12, 13, 5, 6]`
+
+**Second Pass**:
+- Consider the third element (13) and insert it into its correct position → `[11, 12, 13, 5, 6]`
+
+**Third Pass**:
+- Consider the fourth element (5) and insert it into its correct position → `[5, 11, 12, 13, 6]`
+
+**Fourth Pass**:
+- Consider the fifth element (6) and insert it into its correct position → `[5, 6, 11, 12, 13]`
+
+The array is now sorted.
+
+#### Insertion Sort Implementation in Python
+
+```python
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+    return arr
+
+# Example usage
+arr = [12, 11, 13, 5, 6]
+sorted_arr = insertion_sort(arr)
+print("Sorted array:", sorted_arr)
+```
+
+#### Key Points
+- **Time Complexity**: O(n^2) in the worst and average cases. O(n) in the best case (when the array is already sorted).
+- **Space Complexity**: O(1) because it is an in-place sorting algorithm.
+- **Stability**: Insertion sort is a stable sorting algorithm.
+
+---
+
+### Merge Sort
+
+**Merge sort** is an efficient, stable, comparison-based, divide-and-conquer sorting algorithm. Most implementations produce a stable sort, meaning that the order of equal elements is preserved.
+
+#### How Merge Sort Works
+
+1. **Divide**:
+   - Split the array into two halves.
+
+2. **Conquer**:
+   - Recursively sort each half.
+
+3. **Combine**:
+   - Merge the two sorted halves to produce the sorted whole.
+
+#### Example
+
+Let's sort the array `[38, 27, 43, 3, 9, 82, 10]` using merge sort:
+
+**Divide**:
+- Split into `[38, 27, 43]` and `[3, 9, 82, 10]`
+
+**Conquer**:
+- Split `[38, 27, 43]` into `[38]` and `[27, 43]`
+- Split `[27, 43]` into `[27]` and `[43]`
+- Split `[3, 9, 82, 10]` into `[3, 9]` and `[82, 10]`
+- Split `[3, 9]` into `[3]` and `[9]`
+- Split `[82, 10]` into `[82]` and `[10]`
+
+**Combine**:
+- Merge `[27]` and `[43]` into `[27, 43]`
+- Merge `[38]` and `[27, 43]` into `[27, 38, 43]`
+- Merge `[3]` and `[9]` into `[3, 9]`
+- Merge `[82]` and `[10]` into `[10, 82]`
+- Merge `[3, 9]` and `[10, 82]` into `[3, 9, 10, 82]`
+- Merge `[27, 38, 43]` and `[3, 9, 10, 82]` into `[3, 9, 10, 27, 38, 43, 82]`
+
+The array is now sorted.
+
+#### Merge Sort Implementation in Python
+
+```python
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left_half = arr[:mid]
+        right_half = arr[mid:]
+
+        merge_sort(left_half)
+        merge_sort(right_half)
+
+        i = j = k = 0
+
+        while i < len(left_half) and j < len(right_half):
+            if left_half[i] < right_half[j]:
+                arr[k] = left_half[i]
+                i += 1
+            else:
+                arr[k] = right_half[j]
+                j += 1
+            k += 1
+
+        while i < len(left_half):
+            arr[k] = left_half[i]
+            i += 1
+            k += 1
+
+        while j < len(right_half):
+            arr[k] = right_half[j]
+            j += 1
+            k += 1
+
+    return arr
+
+# Example usage
+arr = [38, 27, 43, 3, 9, 82, 10]
+sorted_arr = merge_sort(arr)
+print("Sorted array:", sorted_arr)
+```
+
+#### Key Points
+- **Time Complexity**: O(n log n) in all cases.
+- **Space Complexity**: O(n) due to the additional space required for the temporary arrays.
+- **Stability**: Merge sort is a stable sorting algorithm.
+
+---
+
+
+
