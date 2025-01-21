@@ -28,16 +28,16 @@ This method uses past market data to compute potential portfolio losses.
 
 - **Example**:
   Suppose you have a portfolio, and the daily returns for the past 10 days are:  
-  \[-2.5\%, -1.0\%, -0.5\%, -2.0\%, -1.5\%, -0.8\%, -3.0\%, -0.3\%, -2.2\%, -1.8\%\].
+  $-2.5\%, -1.0\%, -0.5\%, -2.0\%, -1.5\%, -0.8\%, -3.0\%, -0.3\%, -2.2\%, -1.8\%$.
 
   At a 95% confidence level, we find the 5th percentile (sorted lowest to highest):
-  \[
+  $$
   \{-3.0\%, -2.5\%, -2.2\%, -2.0\%, -1.8\%, \dots\}
-  \]
+  $$
   The 5th percentile is \(-2.5\%\). If the portfolio value is $1,000,000, the 1-day VaR is:
-  \[
+  $$
   \text{VaR}_{95\%} = 2.5\% \times 1,000,000 = 25,000
-  \]
+  $$
   **Interpretation**: There is a 5% chance the portfolio will lose more than $25,000 in one day.
 
 ---
@@ -46,21 +46,21 @@ This method uses past market data to compute potential portfolio losses.
 This method assumes that portfolio returns follow a normal distribution.
 
 - **Example**:
-  Portfolio mean return (\( \mu \)) = 0.1% (daily), standard deviation (\( \sigma \)) = 2%.
+  Portfolio mean return ($ \mu $) = 0.1% (daily), standard deviation ($ \sigma$) = 2%.
 
-  For a 95% confidence level, the Z-score is \( -1.645 \) (from the standard normal distribution).  
+  For a 95% confidence level, the Z-score is $ -1.645 $ (from the standard normal distribution).  
   VaR is calculated as:
-  \[
+  $$
   \text{VaR}_{95\%} = -Z \cdot \sigma + \mu
-  \]
+  $$
   Substituting values:
-  \[
+  $$
   \text{VaR}_{95\%} = -1.645 \cdot 0.02 + 0.001 = -0.0329 \, (\text{or } -3.29\%)
-  \]
+  $$
   For a portfolio value of $1,000,000:
-  \[
+  $$
   \text{VaR}_{95\%} = 3.29\% \times 1,000,000 = 32,900
-  \]
+  $$
   **Interpretation**: There is a 5% chance the portfolio will lose more than $32,900 in one day.
 
 ---
@@ -69,15 +69,15 @@ This method assumes that portfolio returns follow a normal distribution.
 This method simulates a large number of potential price paths using random draws from a distribution.
 
 - **Example**:
-  Suppose you simulate 100,000 potential portfolio returns using the portfolio's mean return (\( \mu = 0.1\% \)) and standard deviation (\( \sigma = 2\% \)). The simulated returns might look like this:  
-  \[
+  Suppose you simulate 100,000 potential portfolio returns using the portfolio's mean return ($ \mu = 0.1\% $) and standard deviation ($\sigma = 2\% $). The simulated returns might look like this:  
+  $$
   \{-2.5\%, -1.8\%, -3.1\%, -0.2\%, \dots, -2.3\%\}
-  \]
+  $$
 
   At a 95% confidence level, sort the simulated losses and identify the 5th percentile. If the 5th percentile loss is \(-2.6\%\), the VaR is:
-  \[
+  $$
   \text{VaR}_{95\%} = 2.6\% \times 1,000,000 = 26,000
-  \]
+  $$
   **Interpretation**: There is a 5% chance the portfolio will lose more than $26,000 in one day.
 
 ---
