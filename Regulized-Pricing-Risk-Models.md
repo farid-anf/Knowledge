@@ -7,7 +7,10 @@ A bond is a debt security with periodic interest payments (coupons) and a final 
 
 - **Cash Flows**: A bond generates periodic cash flows:
 
-$$\text{Cash Flow at time } t =$$
+$$\text{Cash Flow at time } t =\begin{cases} 
+      \text{Coupon Payment} & \text{for } t = 1, 2, \dots, T-1 \\
+      \text{Coupon Payment} + \text{Face Value} & \text{for } t = T 
+  \end{cases}$$
   
   $$\text{Cash Flow at time } t = 
   \begin{cases} 
