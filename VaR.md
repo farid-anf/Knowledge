@@ -1,21 +1,21 @@
 ### Mathematical Definition of VaR
 
-Value at Risk (VaR) is defined as the maximum loss \( L \) such that the probability of a greater loss is at most \( 1 - \alpha \), where \( \alpha \) is the confidence level. Mathematically:
+Value at Risk (VaR) is defined as the maximum loss  $L$ such that the probability of a greater loss is at most $1 - \alpha$, where $\alpha$ is the confidence level. Mathematically:
 
-\[
+$$
 P(L > \text{VaR}_{\alpha}) = 1 - \alpha
-\]
+$$
 
 or equivalently,
 
-\[
+$$
 P(L \leq \text{VaR}_{\alpha}) = \alpha
-\]
+$$
 
 Here:
-- \( L \) is the loss on the portfolio.
-- \( \alpha \) is the confidence level (e.g., 95% or 99%).
-- \( \text{VaR}_{\alpha} \) is the value at risk.
+- $L$ is the loss on the portfolio.
+- $\alpha$ is the confidence level (e.g., 95% or 99%).
+- $\text{VaR}_{\alpha}$ is the value at risk.
 
 VaR is typically expressed in monetary units or as a percentage of the portfolio value.
 
