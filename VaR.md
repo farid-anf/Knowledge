@@ -27,9 +27,9 @@ This method uses past market data to compute potential portfolio losses.
   -2.5\%, -1.0\%, -0.5\%, -2.0\%, -1.5\%, -0.8\%, -3.0\%, -0.3\%, -2.2\%, -1.8\%.
 
   At a 95% confidence level, we find the 5th percentile (sorted lowest to highest):
-  $\{-3.0\%, -2.5\%, -2.2\%, -2.0\%, -1.8\%, \dots\}$
-  The 5th percentile is \(-2.5\%\). If the portfolio value is $1,000,000$, the 1-day VaR is:
-  $\text{VaR}_{95\%} = 2.5\% \times 1,000,000 = 25,000$
+  \{-3.0\%, -2.5\%, -2.2\%, -2.0\%, -1.8\%, \dots\}
+  The 5th percentile is $-2.5\%$. If the portfolio value is $1,000,000$, the 1-day VaR is:
+  \text{VaR}_{95\%} = 2.5\% \times 1,000,000 = 25,000
   **Interpretation**: There is a 5% chance the portfolio will lose more than $25,000 in one day.
 
 ---
