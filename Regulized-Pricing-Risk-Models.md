@@ -12,20 +12,14 @@ $$\text{Cash Flow at time } t =\begin{cases}
       \text{Coupon Payment} + \text{Face Value} & \text{for } t = T 
   \end{cases}$$
   
-  $$\text{Cash Flow at time } t = 
-  \begin{cases} 
-      \text{Coupon Payment} & \text{for } t = 1, 2, \dots, T-1 \\
-      \text{Coupon Payment} + \text{Face Value} & \text{for } t = T 
-  \end{cases}$$
-  
 
 ---
 
 ### 2. **Bond Pricing**
 The price of a bond is the **present value (PV)** of its future cash flows, discounted using the **discount rate \( r \)** (often related to market interest rates):
-\[
-P = \sum_{t=1}^{T} \frac{C}{(1 + r)^t} + \frac{F}{(1 + r)^T}
-\]
+
+$$P = \sum_{t=1}^{T} \frac{C}{(1 + r)^t} + \frac{F}{(1 + r)^T}$$
+
 Where:
 - \( P \): Price of the bond
 - \( C \): Periodic coupon payment (\( C = \text{Coupon Rate} \times F \))
