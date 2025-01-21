@@ -28,28 +28,27 @@ Where:
 
 Assuming continuous compounding, the bond price can also be expressed using the yield to maturity \( y \):
 
-\[
-P = \sum_{i=1}^{N} \left( C_i \times e^{-y t_i} \right)
-\]
+
+$$P = \sum_{i=1}^{N} \left( C_i \times e^{-y t_i} \right)$$
+
 
 Where:
-- \( C_i \) represents the \( i \)-th cash flow.
-- \( t_i \) is the time in years until the \( i \)-th payment.
-- \( y \) is the yield to maturity.
+- $C_i$ represents the $i$-th cash flow.
+- $t_i$ is the time in years until the $i$-th payment.
+- $y$ is the yield to maturity.
 
 ### 3. **Bond Duration**
 
 Duration measures the sensitivity of the bond's price to changes in yield. It's calculated as:
 
-\[
-d = \frac{1}{P} \sum_{i=1}^{N} \left( t_i \times C_i \times e^{-y t_i} \right)
-\]
+
+$$d = \frac{1}{P} \sum_{i=1}^{N} \left( t_i \times C_i \times e^{-y t_i} \right)$$
 
 Where:
-- \( t_i \) is the time in years until the \( i \)-th payment.
-- \( C_i \) is the \( i \)-th cash flow.
-- \( y \) is the yield to maturity.
-- \( P \) is the current bond price.
+- $t_i$ is the time in years until the \( i \)-th payment.
+- $C_i$ is the $i$-th cash flow.
+- $y$ is the yield to maturity.
+- $P$ is the current bond price.
 
 ### 4. **Bond Convexity**
 
