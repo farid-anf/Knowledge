@@ -40,11 +40,8 @@ In simpler terms, CVaR gives us a deeper understanding of the magnitude of losse
 Given a confidence level $\alpha$ (e.g., 95% or 99%), CVaR is the expected loss that occurs in the worst $1-\alpha$
 portion of the probability distribution. Mathematically, it's expressed as:
 
-$CVaR_\alpha=\frac{1}{1-\alpha}\int_{-\infty}^{VaR_{\alpha}}$
+$$CVaR_\alpha=\frac{1}{1-\alpha}\int_{-\infty}^{VaR_{\alpha}} xf(x)dx$$
 
-$$\text{CVaR}_\alpha =\frac{1}{1-\alpha}{-\infty}^{\text{VaR}_\alpha}$$
-
-$$\text{CVaR}_\alpha = \frac{1}{1-\alpha} \int_{-\infty}^{\text{VaR}_\alpha} x \, f(x) \, dx$$
 
 Where:
 - $\text{CVaR}_\alpha$ is the conditional value at risk at confidence level $\alpha$.
