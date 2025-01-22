@@ -314,6 +314,144 @@ Credit risk models are used to assess the likelihood that a borrower will defaul
 
 **Example**: Using logistic regression or machine learning techniques to predict the likelihood of a corporate borrower defaulting on debt.
 
+
+### **Credit Risk Models**
+
+Credit risk refers to the possibility that a borrower or counterparty will fail to meet their financial obligations according to the terms of the contract, such as defaulting on loan payments or failing to make a scheduled bond payment. Credit risk is a crucial area of finance, especially for banks, investment firms, and any institution involved in lending or bond investments.
+
+Credit risk models are used to assess the likelihood of default, the potential loss in case of default, and the overall creditworthiness of borrowers or counterparties.
+
+---
+
+### **Key Concepts in Credit Risk**
+
+1. **Default Risk**: The probability that a borrower will fail to repay their debt.
+2. **Loss Given Default (LGD)**: The proportion of the loan or exposure that would be lost if the borrower defaults.
+3. **Exposure at Default (EAD)**: The amount of exposure at the time of default, i.e., the total amount of debt or obligations that are at risk.
+4. **Probability of Default (PD)**: The likelihood that a borrower will default over a given time horizon (e.g., one year).
+5. **Credit Spread**: The difference between the yield on a corporate bond and the yield on a risk-free government bond of similar maturity. A higher credit spread usually indicates higher credit risk.
+6. **Recovery Rate**: The proportion of the loan or debt that can be recovered in the event of default.
+
+---
+
+### **Credit Risk Modeling Techniques**
+
+Credit risk models help financial institutions assess and mitigate risk by quantifying the potential for default and loss. Below are some commonly used models in credit risk analysis:
+
+#### **1. Structural Models**
+
+**Structural models** are based on the firm's capital structure and assume that the value of a firm's assets follows a stochastic process. Default occurs when the value of a firm’s assets falls below a certain threshold, usually the face value of its debt.
+
+The most famous example of this model is the **Merton Model**, developed by Robert Merton in 1974. In the Merton Model, the value of a firm's assets follows a geometric Brownian motion, and default occurs when the value of assets falls below the value of debt at maturity.
+
+- **Merton Model Assumptions**:
+  - The firm’s assets follow a geometric Brownian motion.
+  - The firm has a single debt issuance with a fixed face value.
+  - Default happens if the value of the firm’s assets falls below the face value of its debt.
+
+**Merton Model Formula**:
+
+The probability of default is estimated by comparing the value of assets to the debt level:
+
+\[
+d_1 = \frac{\log \left( \frac{V_0}{D} \right) + \left( r + \frac{\sigma^2}{2} \right) T}{\sigma \sqrt{T}}
+\]
+
+\[
+d_2 = d_1 - \sigma \sqrt{T}
+\]
+
+Where:
+- \(V_0\) = current value of assets
+- \(D\) = debt level
+- \(r\) = risk-free interest rate
+- \(\sigma\) = volatility of assets
+- \(T\) = time to maturity
+
+Then, the probability of default (PD) is given by the cumulative distribution function (CDF) of a standard normal distribution:
+
+\[
+PD = N(d_2)
+\]
+
+Where \(N(\cdot)\) is the cumulative normal distribution function.
+
+#### **2. Reduced-Form Models**
+
+**Reduced-form models** do not rely on the firm’s assets directly. Instead, these models focus on the arrival of a default event as a stochastic process. They model default as an event that can occur randomly, independent of the company’s financial situation.
+
+**Jarrow-Turnbull Model** and **Duffie-Singleton Model** are popular reduced-form models.
+
+In the Jarrow-Turnbull Model, default occurs when the firm’s default intensity (or hazard rate) exceeds a certain threshold. The model uses a **Cox process** for default arrival.
+
+#### **3. Credit Valuation Adjustment (CVA)**
+
+CVA is a measure used to assess the risk of counterparty default in over-the-counter derivatives transactions. CVA is the adjustment made to the price of a derivative to account for the possibility of default by the counterparty.
+
+The formula for CVA is:
+
+\[
+\text{CVA} = (1 - \text{Recovery Rate}) \times \sum_{t} \text{Discount Factor}(t) \times \text{Probability of Default}(t)
+\]
+
+Where:
+- \(\text{Recovery Rate}\) is the percentage of exposure recovered in case of default.
+- \(\text{Probability of Default}(t)\) is the probability of default at time \(t\).
+- \(\text{Discount Factor}(t)\) is the present value of future cash flows at time \(t\).
+
+#### **4. Credit Default Swap (CDS) Pricing Model**
+
+A **Credit Default Swap (CDS)** is a financial derivative that allows the buyer of the swap to hedge against the risk of default by a particular borrower or counterparty. The price of the CDS can be used to assess the creditworthiness of the borrower.
+
+The pricing of CDS is based on the **hazard rate**, which is the rate at which default occurs. The hazard rate can be used to model the probability of default.
+
+---
+
+### **Credit Risk Modelling Example**
+
+Let’s say you are analyzing the credit risk of a corporation with the following data:
+
+- **Current value of assets (\(V_0\))**: $500 million
+- **Debt level (\(D\))**: $400 million
+- **Risk-free interest rate (\(r\))**: 5% per year
+- **Volatility of assets (\(\sigma\))**: 20% per year
+- **Time to maturity (\(T\))**: 1 year
+
+We can apply the **Merton Model** to calculate the probability of default.
+
+1. **Calculate \(d_1\) and \(d_2\)**:
+
+\[
+d_1 = \frac{\log \left( \frac{500}{400} \right) + \left( 0.05 + \frac{0.2^2}{2} \right) 1}{0.2 \sqrt{1}} = \frac{\log(1.25) + (0.05 + 0.02)}{0.2}
+\]
+
+\[
+d_1 \approx \frac{0.2231 + 0.07}{0.2} = 1.4655
+\]
+
+\[
+d_2 = 1.4655 - 0.2 = 1.2655
+\]
+
+2. **Calculate the Probability of Default (PD)** using the CDF of the normal distribution:
+
+\[
+PD = N(d_2) = N(1.2655) \approx 0.897
+\]
+
+So, the **probability of default** for this company is approximately 89.7% over the next year.
+
+---
+
+### **Conclusion**
+
+Credit risk models are crucial for assessing the likelihood of default, the exposure in case of default, and the potential loss for financial institutions or investors. Various models, such as structural models (e.g., Merton), reduced-form models (e.g., Jarrow-Turnbull), and credit valuation adjustment (CVA), offer different approaches to estimating credit risk.
+
+- **Structural Models** focus on the firm’s financial health, asset value, and liabilities.
+- **Reduced-Form Models** focus on default probabilities and intensity processes without needing to consider the firm’s financial structure directly.
+- **CVA and CDS Models** provide practical tools for measuring the counterparty risk in derivatives trading.
+
+Would you like to explore a specific credit risk model in more detail or work through a more complex example?
 ---
 
 ### **5. Market Risk Models**
