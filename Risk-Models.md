@@ -159,8 +159,6 @@ This can be done with optimization techniques, using the portfolio's return dist
 - It is valuable for portfolio managers, risk analysts, and regulators who need to assess the impact of extreme losses on their investments or financial systems.
 - By considering the losses that go beyond the VaR threshold, CVaR helps in understanding the real potential for financial ruin in extreme market conditions.
 
-Would you like to see the complete implementation of this example in Python, or do you have specific questions on CVaR?
-
 ---
 
 ### **3. Stress Testing and Scenario Analysis**
