@@ -37,17 +37,18 @@ In simpler terms, CVaR gives us a deeper understanding of the magnitude of losse
 
 ### **1. Formula for CVaR**
 
-Given a confidence level \( \alpha \) (e.g., 95% or 99%), CVaR is the expected loss that occurs in the worst \( 1-\alpha \) portion of the probability distribution. Mathematically, it's expressed as:
+Given a confidence level $\alpha$ (e.g., 95% or 99%), CVaR is the expected loss that occurs in the worst $1-\alpha$
+portion of the probability distribution. Mathematically, it's expressed as:
 
-\[
-\text{CVaR}_\alpha = \frac{1}{1-\alpha} \int_{-\infty}^{\text{VaR}_\alpha} x \, f(x) \, dx
-\]
+
+$$\text{CVaR}_\alpha = \frac{1}{1-\alpha} \int_{-\infty}^{\text{VaR}_\alpha} x \, f(x) \, dx$$
+
 
 Where:
-- \( \text{CVaR}_\alpha \) is the conditional value at risk at confidence level \( \alpha \).
-- \( \text{VaR}_\alpha \) is the value at risk at confidence level \( \alpha \), which is the loss at the threshold.
-- \( f(x) \) is the probability density function of the asset or portfolio returns.
-- \( \alpha \) is the confidence level (e.g., 95%, 99%).
+- $\text{CVaR}_\alpha$ is the conditional value at risk at confidence level $\alpha$.
+- $\text{VaR}_\alpha$ is the value at risk at confidence level $\alpha$, which is the loss at the threshold.
+- $f(x)$ is the probability density function of the asset or portfolio returns.
+- $\alpha$ is the confidence level (e.g., 95%, 99%).
 
 In practical terms, CVaR is the expected loss that exceeds the VaR threshold.
 
