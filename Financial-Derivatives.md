@@ -227,3 +227,100 @@ $$\rho_{\text{put}} = -K T e^{-rT} N(-d_2)$$
 
 ---
 
+### **European Digital Option (Binary Option):**
+
+A **European digital option**, also called a **binary option**, is a type of option that pays a fixed amount if a certain condition is met at expiration. Unlike standard options, the payout of a digital option does not depend on the difference between the strike price and the underlying price; instead, it is a fixed value or zero.
+
+---
+
+### **Key Characteristics:**
+1. **Payout Structure:**
+   - If the condition is met (e.g., the underlying price is above the strike price for a call option), the buyer receives a fixed payout.
+   - If the condition is not met, the buyer receives nothing.
+   - The payoff is **all-or-nothing**.
+
+2. **European-style:**
+   - These options can only be exercised at maturity (not before).
+
+3. **Payoff Formula:**
+   - For a **digital call option**, the payoff is:
+     
+     $$\text{Payoff} = \begin{cases} 
+     Q & \text{if } S_T > K \\
+     0 & \text{if } S_T \leq K 
+     \end{cases}$$
+     
+   - For a **digital put option**, the payoff is:
+     
+     $$\text{Payoff} = \begin{cases} 
+     Q & \text{if } S_T < K \\
+     0 & \text{if } S_T \geq K 
+     \end{cases}$$
+     
+     Where:
+     - \( Q \): Fixed payout.
+     - \( S_T \): Price of the underlying at expiration.
+     - \( K \): Strike price.
+
+---
+
+### **Valuation of a Digital Option:**
+
+The Black-Scholes framework can be adapted to value European digital options. The price of a digital option is essentially the discounted probability of the condition being met.
+
+#### **Digital Call Option Price:**
+
+$$C_{\text{digital}} = e^{-rT} N(d_2)$$
+
+#### **Digital Put Option Price:**
+
+$$P_{\text{digital}} = e^{-rT} N(-d_2)$$
+
+
+Where:
+- \( N(d_2) \): The cumulative probability of \( d_2 \) under a standard normal distribution.
+- \( d_2 \) is defined as:
+  
+  $$d_2 = \frac{\ln(S_0 / K) + (r - \sigma^2 / 2)T}{\sigma \sqrt{T}}$$
+
+---
+
+### **Greek Sensitivities:**
+- **Delta:** Measures the change in the digital option price with respect to changes in the underlying price. It is a **spike-like function** near the strike price.
+- **Gamma:** Even sharper spike than Delta, as digital options have a discontinuous payoff.
+- **Theta:** Measures the impact of time decay. For digital options, Theta can be quite erratic near expiration.
+- **Vega:** Measures sensitivity to volatility. Vega is high near the strike price because a slight increase in volatility can significantly affect the likelihood of crossing the strike.
+
+---
+
+### **Use Cases:**
+1. **Speculation:**
+   - Investors use digital options to speculate on whether an asset will be above or below a certain price at expiration.
+   
+2. **Risk Management:**
+   - Digital options can serve as a hedge for specific payout structures, such as insurance against specific price movements.
+
+3. **Exotic Trading:**
+   - Popular in exotic options markets due to their simplicity and all-or-nothing payoff.
+
+---
+
+### **Example:**
+Suppose you buy a **European digital call option** on a stock with:
+- Strike price (\( K \)): $100
+- Fixed payout (\( Q \)): $1,000
+- Current stock price (\( S_0 \)): $95
+- Volatility (\( \sigma \)): 20% per year
+- Time to expiration (\( T \)): 1 year
+- Risk-free rate (\( r \)): 5%.
+
+At maturity:
+- If the stock price \( S_T > 100 \), you receive $1,000.
+- Otherwise, you receive $0.
+
+Using the formula, you can calculate the price of this option today.
+
+---
+
+Digital options are widely used in structured products and speculative trading due to their straightforward payoff structure and pricing simplicity.
+
