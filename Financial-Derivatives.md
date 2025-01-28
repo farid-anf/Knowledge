@@ -1,7 +1,12 @@
+The **Black-Scholes formula** for the price of a European **call option** is given by:
+$$
+C_K(T) = K e^{-rT} N(d_2) + S_0 N(d_1)
+$$
+
 The **Black-Scholes formula** for the price of a European **put option** is given by:
 
 $$
-P = K e^{-rT} N(-d_2) - S_0 N(-d_1)
+P_K(T) = K e^{-rT} N(-d_2) - S_0 N(-d_1)
 $$
 
 Where:
