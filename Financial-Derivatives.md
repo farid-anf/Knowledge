@@ -158,4 +158,72 @@ $$d_1 = \frac{\ln(S_0 / K) + (r + \sigma^2 / 2)T}{\sigma \sqrt{T}}$$
 $$d_2 = d_1 - \sigma \sqrt{T}
 $$
 
+---
+
+### **Enhanced Table with Greeks in Terms of Derivatives**
+
+| **Greek** | **Measures Sensitivity To**           | **Call Option Impact**                           | **Put Option Impact**                            | **Mathematical Formula** (Derivatives)                                                |
+|-----------|---------------------------------------|------------------------------------------------|-------------------------------------------------|---------------------------------------------------------------------------------------|
+| **Delta (Δ)** | Underlying price (\( S_0 \))        | Positive (\( 0 \leq \Delta \leq 1 \))           | Negative (\( -1 \leq \Delta \leq 0 \))          | \( $\Delta = \frac{\partial C}{\partial S_0}$ \) (Call), \( $\Delta = \frac{\partial P}{\partial S_0}$ \) (Put) |
+| **Gamma (Γ)** | Delta                               | Positive for both                               | Positive for both                               | \( $\Gamma = \frac{\partial^2 C}{\partial S_0^2} = \frac{\partial^2 P}{\partial S_0^2}$ \)                |
+| **Theta (Θ)** | Time decay                          | Negative (value decreases over time)            | Negative (value decreases over time)            | \( $\Theta = \frac{\partial C}{\partial T}$ \) (Call), \( $\Theta = \frac{\partial P}{\partial T}$ \) (Put) |
+| **Vega (ν)**  | Volatility (\( \sigma \))           | Positive (higher volatility increases value)    | Positive (higher volatility increases value)    | \( $\nu = \frac{\partial C}{\partial \sigma} = \frac{\partial P}{\partial \sigma}$ \)                     |
+| **Rho (ρ)**   | Risk-free interest rate (\( r \))  | Positive                                        | Negative                                        | \( $\rho = \frac{\partial C}{\partial r} \) (Call), \( \rho = \frac{\partial P}{\partial r}$ \) (Put)     |
+
+---
+
+### **Explicit Formulas for Each Greek**
+
+Using the Black-Scholes formula, the Greeks can also be expressed explicitly as follows:
+
+---
+
+#### **1. Delta (Δ):**
+
+$$\Delta_{\text{call}} = N(d_1), \quad \Delta_{\text{put}} = N(d_1) - 1$$
+
+Where:
+$$d_1 = \frac{\ln(S_0 / K) + (r + \sigma^2 / 2)T}{\sigma \sqrt{T}}$$
+
+---
+
+#### **2. Gamma (Γ):**
+
+$$\Gamma = \frac{N'(d_1)}{S_0 \sigma \sqrt{T}}$$
+
+Where \( N'(d_1) \) is the probability density function (PDF) of the standard normal distribution:
+
+$$N'(d_1) = \frac{1}{\sqrt{2\pi}} e^{-d_1^2 / 2}$$
+
+---
+
+#### **3. Theta (Θ):**
+For a **call option**:
+
+$$\Theta_{\text{call}} = -\frac{S_0 N'(d_1) \sigma}{2\sqrt{T}} - r K e^{-rT} N(d_2)$$
+For a **put option**:
+
+$$\Theta_{\text{put}} = -\frac{S_0 N'(d_1) \sigma}{2\sqrt{T}} + r K e^{-rT} N(-d_2)$$
+Where:
+
+$$d_2 = d_1 - \sigma \sqrt{T}$$
+
+---
+
+#### **4. Vega (ν):**
+
+$$\nu = S_0 N'(d_1) \sqrt{T}$$
+
+---
+
+#### **5. Rho (ρ):**
+For a **call option**:
+
+$$\rho_{\text{call}} = K T e^{-rT} N(d_2)$$
+
+For a **put option**:
+
+$$\rho_{\text{put}} = -K T e^{-rT} N(-d_2)$$
+
+---
 
