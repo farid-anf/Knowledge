@@ -70,6 +70,9 @@ $$
 P_K(T) = K e^{-rT} N(-d_2) - S_0 N(-d_1)
 $$
 
+
+
+
 Where:
 
 - \( P \): The price of the put option
@@ -77,6 +80,7 @@ Where:
 - \( K \): The strike price of the option
 - \( r \): The risk-free interest rate (annualized and continuously compounded)
 - \( T \): Time to maturity (in years)
+- q: Continuous dividend yield (annualized, continuously compounded).
 - \( \sigma \): The volatility of the underlying asset (standard deviation of its returns)
 - \( N(x) \): The cumulative distribution function (CDF) of the standard normal distribution
 - \( d_1 \) and \( d_2 \) are intermediate terms, defined as:
