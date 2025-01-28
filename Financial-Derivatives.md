@@ -70,7 +70,13 @@ $$
 P_K(T) = K e^{-rT} N(-d_2) - S_0 N(-d_1)
 $$
 
+The **Black-Scholes-Merton formula** for the price of a European **call option with dividends** is given by:
 
+$$C_K(T) = K e^{-rT} N(d_2) + S_0 e^{-qT} N(d_1)$$
+
+The **Black-Scholes formula** for the price of a European **put optionwith dividends** is given by:
+
+$$P_K(T) = K e^{-rT} N(-d_2) - S_0 e^{-qT} N(-d_1)$$
 
 
 Where:
