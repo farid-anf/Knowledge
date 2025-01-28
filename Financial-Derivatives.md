@@ -15,13 +15,13 @@ Where:
 - \( N(x) \): The cumulative distribution function (CDF) of the standard normal distribution
 - \( d_1 \) and \( d_2 \) are intermediate terms, defined as:
 
-\[
-d_1 = \frac{\ln(S_0 / K) + (r + \sigma^2 / 2)T}{\sigma \sqrt{T}}
-\]
 
-\[
-d_2 = d_1 - \sigma \sqrt{T}
-\]
+$$d_1 = \frac{\ln(S_0 / K) + (r + \sigma^2 / 2)T}{\sigma \sqrt{T}}$$
+
+
+
+$$d_2 = d_1 - \sigma \sqrt{T}
+$$
 
 ### Explanation:
 - \( S_0 N(-d_1) \): Represents the present value of the asset price when the put option is exercised.
