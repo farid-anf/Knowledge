@@ -23,8 +23,4 @@ $$d_1 = \frac{\ln(S_0 / K) + (r + \sigma^2 / 2)T}{\sigma \sqrt{T}}$$
 $$d_2 = d_1 - \sigma \sqrt{T}
 $$
 
-### Explanation:
-- \( S_0 N(-d_1) \): Represents the present value of the asset price when the put option is exercised.
-- \( K e^{-rT} N(-d_2) \): Represents the present value of the strike price discounted at the risk-free rate, adjusted by the probability of exercise.
 
-The formula assumes no dividends, European-style exercise (only at maturity), and constant volatility and interest rates.
