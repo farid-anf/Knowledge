@@ -57,6 +57,65 @@ The **Black-Scholes model** relies on several assumptions to derive the pricing 
 
 ---
 
+These terms—**at-the-money (ATM)**, **in-the-money (ITM)**, and **out-of-the-money (OTM)**—describe the relationship between the **strike price** of an option and the **current price** of the underlying asset.
+
+---
+
+### 1. **At-the-Money (ATM)**
+- An option is **at-the-money** when the **strike price** is **approximately equal to the current price** of the underlying asset.
+
+#### Example:
+- **Call Option**: If the strike price = $100 and the stock price = $100, the option is **ATM**.
+- **Put Option**: If the strike price = $100 and the stock price = $100, the option is **ATM**.
+
+---
+
+### 2. **In-the-Money (ITM)**
+- An option is **in-the-money** when it has **intrinsic value**, meaning exercising the option would result in a positive payoff.
+
+#### **Call Option:**
+- ITM if the **current price of the underlying asset** is **greater than the strike price** (\( S_0 > K \)).
+  
+#### **Put Option:**
+- ITM if the **current price of the underlying asset** is **less than the strike price** (\( S_0 < K \)).
+
+#### Example:
+- **Call Option**: Strike price = $100, stock price = $120 → ITM by $20.
+- **Put Option**: Strike price = $100, stock price = $80 → ITM by $20.
+
+---
+
+### 3. **Out-of-the-Money (OTM)**
+- An option is **out-of-the-money** when it has **no intrinsic value**, meaning exercising the option would not result in a positive payoff.
+
+#### **Call Option:**
+- OTM if the **current price of the underlying asset** is **less than the strike price** (\( S_0 < K \)).
+
+#### **Put Option:**
+- OTM if the **current price of the underlying asset** is **greater than the strike price** (\( S_0 > K \)).
+
+#### Example:
+- **Call Option**: Strike price = $100, stock price = $80 → OTM.
+- **Put Option**: Strike price = $100, stock price = $120 → OTM.
+
+---
+
+### **Summary of Terms**:
+
+| **Option Type** | **ITM**                              | **ATM**                              | **OTM**                              |
+|------------------|--------------------------------------|--------------------------------------|--------------------------------------|
+| **Call Option**  | \( S_0 > K \)                       | \( S_0 = K \) (approximately)        | \( S_0 < K \)                       |
+| **Put Option**   | \( S_0 < K \)                       | \( S_0 = K \) (approximately)        | \( S_0 > K \)                       |
+
+---
+
+### **Importance in Options Trading:**
+1. **Intrinsic Value**: Only ITM options have intrinsic value; OTM options are purely speculative.
+2. **Premiums**: ATM options tend to have the highest **time value**, making them more expensive than OTM options.
+3. **Profitability**: ITM options are closer to profitability, while OTM options require a significant price move to become profitable.
+
+---
+
 These assumptions are idealized and often do not hold perfectly in real markets, which can lead to deviations between theoretical and actual option prices. Extensions to the Black-Scholes model, like the **Black-Scholes-Merton with Dividends** or **Stochastic Volatility models**, address some of these limitations.
 
 
