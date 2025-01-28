@@ -1,8 +1,8 @@
 The **Black-Scholes formula** for the price of a European **put option** is given by:
 
-\[
+$$
 P = K e^{-rT} N(-d_2) - S_0 N(-d_1)
-\]
+$$
 
 Where:
 
