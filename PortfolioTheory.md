@@ -38,11 +38,19 @@ $$
 =\left(\begin{array}{cc} 
 1-w \\ 
 w 
-\end{array}\right)^T =
+\end{array}\right)^T 
 \left(\begin{array}{cc} 
 Cov(R_1,R_1) & Cov(R_1,R_2) \\ 
 Cov(R_2,R_1) & Cov(R_2,R_2)
-\end{array}\right)^T
+\end{array}\right)
+\left(\begin{array}{cc} 
+1-w \\ 
+w 
+\end{array}\right)=
+=\left(\begin{array}{cc} 
+\sigma_1^2 &  \\ 
+w 
+\end{array}\right)^T 
 $$
 
 
