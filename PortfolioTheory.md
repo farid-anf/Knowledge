@@ -29,7 +29,11 @@ $$
 
 $$\alpha_w=E[R_w]=(1-\alpha_1)+w\alpha_2$$
 
-$$\sigma_w^2=Var(R_w)= w cov(R_1,R_2) $$
+$$\sigma_w^2=Var(R_w)= 
+\left(\begin{array}{cc} 
+1-w \\ 
+w 
+\end{array}\right)^T \Sigma(R_w)$$
 
 
 
