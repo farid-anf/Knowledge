@@ -2,6 +2,15 @@
 
 Markowitz Mean Variance Analysis, also known as Modern Portfolio Theory (MPT), is a framework for constructing a portfolio of assets that maximizes expected return for a given level of risk. It was introduced by Harry Markowitz in his 1952 paper "Portfolio Selection." Here’s a crash course on the key concepts:
 
+### Two assets 
+
+The daily return of an asset at time $t$ is computed by $\frac{r_{t}-r_{t-1}}{r_{t-1}}$. Now if we look at the daily returns we have a list of returns that we can compute volatility (variance) and expected return for it. Now consider two assets:
+$$R_1: E(R_1)=$$
+
+
+
+
+
 ### Key Concepts
 
 1. **Expected Return**:
