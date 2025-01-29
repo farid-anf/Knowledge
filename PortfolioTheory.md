@@ -49,7 +49,7 @@ w
 \end{array}\right)=
 $$
 
-$$(1-w)^2\simga_1^2 + w^2\simga_2+2w(1-w)\rho \simga_1 \sigma_2,$$
+$$(1-w)^2 \sigma_1^2 + w^2 \sigma_2+2w(1-w)\rho \sigma_1 \sigma_2,$$
 consider that $\rho=Cov(R_1,R_2)/(\sigma_1\sigma_2)$.
 
 
