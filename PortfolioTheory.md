@@ -12,7 +12,13 @@ $$R_1: E(R_2)= 0.20 = \alpha_2, \sqrt{Var(R_2)}=0.30 = \sigma_2$$
 
 Let have a portfolio with $(1-w)$ share of $R_1$ and $w$ share of $R_2$. 
 
+Then 
 
+$$R_w=[1-w~ w] \left[\begin{array}{c} R_1 \\ R_2 \right] = (1-w)R_1+wR_2, 0\leq w\leq 1$$
+
+$$\alpha_w=E[R_w]=(1-\alpha_1)+w\alpha_2$$
+
+$$\sigma_w^2=Var(R_w)= w cov(R_1,R_2) $$
 
 
 
