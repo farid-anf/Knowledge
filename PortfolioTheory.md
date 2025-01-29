@@ -19,7 +19,7 @@ $$R_w=[1-w~ ~w] \left\(\begin{array}{c} R_1\\ R_2
 
 $$
 \left(\begin{array}{cc} 
-(1-w) \\ 
+1-w \\ 
 w 
 \end{array}\right)^T
 \left(\begin{array}{cc} 
