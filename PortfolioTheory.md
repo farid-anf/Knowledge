@@ -14,7 +14,9 @@ Let have a portfolio with $(1-w)$ share of $R_1$ and $w$ share of $R_2$.
 
 Then 
 
-$$R_w=[1-w~ w] \left\[\begin{array}{c} R_1 \\ R_2 \end{array} \right\] = (1-w)R_1+wR_2, 0\leq w\leq 1$$
+$$R_w=[1-w~ w] \left\[\begin{array}{c} R_1
+\\ R_2
+\end{array} \right\] = (1-w)R_1+wR_2, 0\leq w\leq 1$$
 
 $$\alpha_w=E[R_w]=(1-\alpha_1)+w\alpha_2$$
 
