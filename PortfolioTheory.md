@@ -55,11 +55,11 @@ consider that $\rho=Cov(R_1,R_2)/(\sigma_1\sigma_2)$.
 
 Now we want to minimize the risk: 
 
-**Problem 1** For a specific mean $\alpha_0$ we want to minimize risk: 
+**Problem 1.** For a specific mean $\alpha_0$ we want to minimize risk: 
 
-Minimize $\frac{1}{2}**w^t\Sigma w**$ 
-Subject to $**w^t\alpha** = \alpha_0$
-and $**w^t 1**=1$.
+Minimize $\frac{1}{2}w^t\Sigma w$ 
+Subject to $w^t\alpha = \alpha_0$
+and $w^t 1=1$.
 
 
 ### Key Concepts
