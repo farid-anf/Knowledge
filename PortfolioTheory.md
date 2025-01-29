@@ -33,7 +33,17 @@ $$\sigma_w^2=Var(R_w)=
 \left(\begin{array}{cc} 
 1-w \\ 
 w 
-\end{array}\right)^T \Sigma(R_w)$$
+\end{array}\right)^T \Sigma(R_1,R_2)$$
+$$
+=\left(\begin{array}{cc} 
+1-w \\ 
+w 
+\end{array}\right)^T =
+\left(\begin{array}{cc} 
+Cov(R_1,R_1) & Cov(R_1,R_2) \\ 
+Cov(R_2,R_1) & Cov(R_2,R_2)
+\end{array}\right)^T
+$$
 
 
 
