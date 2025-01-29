@@ -47,12 +47,11 @@ Cov(R_2,R_1) & Cov(R_2,R_2)
 1-w \\ 
 w 
 \end{array}\right)=
-=\left(\begin{array}{cc} 
-\sigma_1^2 &  \\ 
-w 
-\end{array}\right)^T 
 $$
-
+$$
+(1-w)^2\simga_1^2 + w^2\simga_2+2w(1-w)\rho \simga_1 \sigma_2,
+$$
+consider that $\rho=Cov(R_1,R_2)/(\sigma_1\sigma_2)$.
 
 
 ### Key Concepts
