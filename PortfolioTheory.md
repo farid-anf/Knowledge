@@ -5,7 +5,12 @@ Markowitz Mean Variance Analysis, also known as Modern Portfolio Theory (MPT), i
 ### Two assets 
 
 The daily return of an asset at time $t$ is computed by $\frac{r_{t}-r_{t-1}}{r_{t-1}}$. Now if we look at the daily returns we have a list of returns that we can compute volatility (variance) and expected return for it. Now consider two assets:
-$$R_1: E(R_1)=$$
+
+$$R_1: E(R_1)= 0.15 = \alpha_1, \sqrt{Var(R_1)}=0.25 = \sigma_1$$
+
+$$R_1: E(R_2)= 0.20 = \alpha_2, \sqrt{Var(R_2)}=0.30 = \sigma_2$$
+
+Let have a portfolio with $(1-w)$ share of $R_1$ and $w$ share of $R_2$. 
 
 
 
