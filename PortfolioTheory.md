@@ -76,16 +76,16 @@ and $w^t 1=1$.
 
 4. **Portfolio Expected Return**:
    - The expected return of a portfolio is the weighted sum of the expected returns of the individual assets in the portfolio.
-   \[
-   E(R_p) = \sum_{i=1}^{n} w_i E(R_i)
-   \]
+
+   $$E(R_p) = \sum_{i=1}^{n} w_i E(R_i)$$
+   
    where \(E(R_p)\) is the expected return of the portfolio, \(w_i\) is the weight of asset \(i\) in the portfolio, and \(E(R_i)\) is the expected return of asset \(i\).
 
 5. **Portfolio Variance**:
    - The variance of a portfolio takes into account the variances of individual assets and the covariances between them.
-   \[
-   \sigma_p^2 = \sum_{i=1}^{n} \sum_{j=1}^{n} w_i w_j \sigma_{ij}
-   \]
+   
+   $$\sigma_p^2 = \sum_{i=1}^{n} \sum_{j=1}^{n} w_i w_j \sigma_{ij}$$
+   
    where \(\sigma_p^2\) is the portfolio variance, \(w_i\) and \(w_j\) are the weights of assets \(i\) and \(j\), and \(\sigma_{ij}\) is the covariance between assets \(i\) and \(j\).
 
 6. **Efficient Frontier**:
@@ -93,10 +93,10 @@ and $w^t 1=1$.
 
 7. **Sharpe Ratio**:
    - The Sharpe Ratio measures the performance of an investment compared to a risk-free asset, after adjusting for its risk. It is calculated as:
-   \[
-   Sharpe Ratio = \frac{E(R_p) - R_f}{\sigma_p}
-   \]
-   where \(E(R_p)\) is the expected return of the portfolio, \(R_f\) is the risk-free rate, and \(\sigma_p\) is the standard deviation of the portfolio's excess return.
+
+   $$Sharpe Ratio = \frac{E(R_p) - R_f}{\sigma_p}$$
+   
+   where $E(R_p)$ is the expected return of the portfolio, $R_f$ is the risk-free rate, and $\sigma_p$ is the standard deviation of the portfolio's excess return.
 
 ### Steps in Markowitz Mean Variance Analysis
 
@@ -125,9 +125,9 @@ and $w^t 1=1$.
 
 3. **Portfolio Expected Return**:
    If the weights of assets A and B in the portfolio are \(w_A = 0.6\) and \(w_B = 0.4\), the expected return of the portfolio is:
-   \[
-   E(R_p) = 0.6 \cdot 0.08 + 0.4 \cdot 0.12 = 0.096 = 9.6\%
-   \]
+   
+   $$E(R_p) = 0.6 \cdot 0.08 + 0.4 \cdot 0.12 = 0.096 = 9.6\%$$
+   
 
 4. **Portfolio Variance**:
    The portfolio variance is:
