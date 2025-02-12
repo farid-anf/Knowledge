@@ -9,14 +9,14 @@ The **Black-Scholes model** relies on several assumptions to derive the pricing 
 ---
 
 ### 2. **Underlying Asset Dynamics**
-   - The price of the underlying asset follows a **geometric Brownian motion** with constant drift (\( \mu \)) and constant volatility (\( \sigma \)):
-     $$
-     dS = \mu S dt + \sigma S dW
-     $$
+   - The price of the underlying asset follows a **geometric Brownian motion** with constant drift ($\mu$) and constant volatility ($\sigma$):
+    
+     $$\frac{dS}{S} = \mu dt + \sigma dW$$
+     
      where:
-     - \( dW \): A Wiener process (random walk)
-     - \( \mu \): The expected return of the asset (not directly used in the model)
-     - \( \sigma \): The volatility (constant)
+     - $dW$): A Wiener process (random walk)
+     - $\mu$: The expected return of the asset (not directly used in the model)
+     - $\sigma$: The volatility (constant)
 
 ---
 
