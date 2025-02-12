@@ -14,7 +14,7 @@ The **Black-Scholes model** relies on several assumptions to derive the pricing 
      $$\frac{dS}{S} = \mu dt + \sigma dW$$
      
      where:
-     - $dW$): A Wiener process (random walk)
+     - $dW$: A Wiener process (random walk)
      - $\mu$: The expected return of the asset (not directly used in the model)
      - $\sigma$: The volatility (constant)
 
